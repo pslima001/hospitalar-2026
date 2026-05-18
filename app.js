@@ -821,6 +821,10 @@ function setView(viewId) {
   document.querySelectorAll('.nav-btn').forEach(b => {
     b.classList.toggle('active', b.dataset.view === viewId);
   });
+  // Body class para CSS por view
+  ['view-list-view','view-detail-view','view-agenda-view','view-extras-view','view-export-view']
+    .forEach(c => document.body.classList.remove(c));
+  document.body.classList.add('view-' + viewId);
   if (viewId !== 'detail-view') document.body.classList.remove('detail-mode');
   if (viewId === 'agenda-view') renderAgenda();
   if (viewId === 'extras-view') renderExtrasForm();
@@ -877,5 +881,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.querySelectorAll('#filter-row .chip').forEach(b => {
     if (b.dataset.filter === 'all') b.classList.add('active');
   });
+  document.body.classList.add('view-list-view');
   await bootstrap();
 });

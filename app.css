@@ -61,6 +61,11 @@ body {
   background: rgba(255,255,255,0.95); font-size: 14px;
 }
 body.detail-mode .hide-on-detail { display: none !important; }
+body.detail-mode #top-bar { display: none; }
+body:not(.view-list-view) #search-row,
+body:not(.view-list-view) #filter-row,
+body:not(.view-list-view) #rua-row { display: none; }
+body:not(.view-list-view):not(.detail-mode) #top-bar { padding-bottom: 8px; }
 
 main { padding: 0; min-height: calc(100vh - 200px); padding-bottom: 80px; }
 .view { display: none; padding: 8px 12px; }
