@@ -913,6 +913,7 @@ async function addFromPool(p) {
   empresas.sort((a, b) => a.empresa.localeCompare(b.empresa, 'pt-BR'));
   closePoolModal();
   populateRuas();
+  updateCounter();
   showToast('Adicionada: ' + p.empresa);
   openDetail(newId);
 }
