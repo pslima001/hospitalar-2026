@@ -74,10 +74,16 @@
   <!-- Vista de export -->
   <section id="export-view" class="view">
     <h2>Exportar</h2>
-    <p class="muted">Baixa todos os dados que você registrou.</p>
-    <button class="btn primary" id="btn-export-json">Baixar JSON</button>
+    <p class="muted">Baixa ou envia todos os dados que você registrou.</p>
+    <button class="btn success" id="btn-export-share">Enviar tudo para o Drive (ZIP)</button>
+    <p class="muted" style="font-size:12px; margin-top:4px">
+      Inclui fotos, áudios, notas e CSVs. Abre o menu compartilhar do Android — escolha Google Drive.
+    </p>
+    <hr>
+    <button class="btn primary" id="btn-export-zip">Baixar ZIP completo</button>
+    <button class="btn" id="btn-export-json">Baixar JSON (sem mídias)</button>
     <button class="btn" id="btn-export-csv">Baixar CSV (visitas)</button>
-    <button class="btn" id="btn-export-agenda-csv">Baixar CSV (agenda)</button>
+    <button class="btn" id="btn-export-agenda-csv">Baixar CSV (camiseta)</button>
     <hr>
     <h3>Atenção</h3>
     <p class="muted">Dados ficam no seu celular. Se desinstalar o app ou limpar dados do navegador, perde tudo. Faça export ao final de cada dia.</p>
@@ -104,6 +110,7 @@
   </button>
 </nav>
 
+<script src="jszip.min.js"></script>
 <script src="db.js"></script>
 <script src="app.js"></script>
 <script>

@@ -806,6 +806,170 @@ async function exportAgendaCSV() {
   download('hospitalar-camiseta.csv', toCSV(rows), 'text/csv;charset=utf-8');
 }
 
+// ------- EXPORT ZIP (com fotos, áudios, organizado) -------
+function safeName(s) {
+  return String(s||'').replace(/[\\/:*?"<>|]/g, '_').replace(/\s+/g, ' ').trim().slice(0, 80);
+}
+
+async function buildZip() {
+  const zip = new JSZip();
+  const stamp = new Date().toISOString().slice(0, 19).replace(/[:T]/g, '-');
+  const visitas = await db.getAllVisitas();
+  const extras = await db.getAllExtras();
+  const emps = await db.getEmpresas();
+  const empMap = Object.fromEntries(emps.map(e => [e.id, e]));
+
+  // CSVs no topo
+  const visHeaders = ['empresa','rua','stand','status_visita','agenda_dia','agenda_hora',
+    'agenda_quem','interesse','proximos','proximos_outros','notas','transcricao','site','updated_at'];
+  const visRows = [visHeaders];
+  for (const v of visitas) {
+    const e = empMap[v.empresa_id] || {};
+    visRows.push([
+      e.empresa||'', e.rua||'', e.stand||'',
+      v.status||'', v.agenda_dia||'', v.agenda_hora||'', v.agenda_quem||'',
+      v.interesse||'', (v.proximos||[]).join('|'), v.proximos_outros||'',
+      v.notas||'', v.transcricao||'', v.site||'', v.updated_at||''
+    ]);
+  }
+  zip.file('00_visitas.csv', '﻿' + toCSV(visRows));
+
+  const exHeaders = ['nome','telefone','email','dia','hora','local','obs','created_at'];
+  const exRows = [exHeaders];
+  for (const x of extras) {
+    exRows.push([x.nome||'', x.telefone||'', x.email||'', x.dia||'', x.hora||'',
+      x.local||'', x.obs||'', x.created_at||'']);
+  }
+  zip.file('01_camiseta.csv', '﻿' + toCSV(exRows));
+
+  // Manifest
+  zip.file('manifest.json', JSON.stringify({
+    exported_at: new Date().toISOString(),
+    total_empresas: emps.length,
+    total_visitas: visitas.length,
+    total_camiseta: extras.length,
+    app: 'Hospitalar 2026'
+  }, null, 2));
+
+  // Pasta por empresa visitada
+  const folder = zip.folder('visitas');
+  for (const v of visitas) {
+    const e = empMap[v.empresa_id]; if (!e) continue;
+    const slug = `${e.rua||'X'}-${e.stand||'NN'}_${safeName(e.empresa)}`;
+    const sub = folder.folder(slug);
+    sub.file('dados.json', JSON.stringify({
+      empresa: e.empresa, rua: e.rua, stand: e.stand, status: e.status,
+      prospects: e.prospects, visita: { ...v, cartao_blob: undefined, audio_blob: undefined }
+    }, null, 2));
+    const notasTxt = [
+      `EMPRESA: ${e.empresa}`,
+      `STAND: ${e.rua||'?'}-${e.stand||'?'}`,
+      `STATUS: ${v.status || '—'}`,
+      v.status === 'voltar' ? `AGENDADO: ${v.agenda_dia} ${v.agenda_hora} (${v.agenda_quem||'—'})` : '',
+      `INTERESSE: ${v.interesse || '—'}`,
+      `PRÓXIMOS PASSOS: ${(v.proximos||[]).join(', ') || '—'}`,
+      v.proximos_outros ? `OUTROS: ${v.proximos_outros}` : '',
+      '',
+      '--- NOTAS ---',
+      v.notas || '(vazio)',
+      '',
+      '--- TRANSCRIÇÃO ---',
+      v.transcricao || '(vazio)',
+      '',
+      '--- PROSPECTS ---',
+      ...(e.prospects||[]).map(p => `${p.nome} ${p.linkedin ? '— '+p.linkedin : ''}`)
+    ].filter(Boolean).join('\n');
+    sub.file('notas.txt', notasTxt);
+    if (v.audio_blob) {
+      const ext = (v.audio_blob.type && v.audio_blob.type.includes('mp4')) ? 'm4a' : 'webm';
+      sub.file('audio.' + ext, v.audio_blob);
+    }
+    if (v.cartao_blob) {
+      const ext = (v.cartao_blob.type || 'image/jpeg').split('/')[1] || 'jpg';
+      sub.file('cartao.' + ext, v.cartao_blob);
+    }
+    // Fotos prospects
+    for (let i = 0; i < (e.prospects||[]).length; i++) {
+      const foto = await db.getFoto(`${e.id}_p${i}`);
+      if (foto) {
+        const ext = (foto.type || 'image/jpeg').split('/')[1] || 'jpg';
+        const nome = safeName(e.prospects[i].nome || `prospect_${i+1}`);
+        sub.file(`prospect_${i+1}_${nome}.${ext}`, foto);
+      }
+    }
+  }
+
+  // Pasta camiseta
+  if (extras.length) {
+    const ef = zip.folder('camiseta');
+    for (const x of extras) {
+      const fname = `${x.dia||'sem-dia'}_${x.hora||'??'}_${safeName(x.nome||'sem-nome')}.txt`;
+      ef.file(fname, [
+        `NOME: ${x.nome||''}`,
+        `TELEFONE: ${x.telefone||''}`,
+        `EMAIL: ${x.email||''}`,
+        `DIA: ${x.dia||''}`,
+        `HORA: ${x.hora||''}`,
+        `LOCAL: ${x.local||''}`,
+        '',
+        '--- OBSERVAÇÕES ---',
+        x.obs||'(vazio)'
+      ].join('\n'));
+    }
+  }
+
+  showToast('Compactando…');
+  const blob = await zip.generateAsync(
+    { type: 'blob', compression: 'DEFLATE', compressionOptions: { level: 6 } },
+    (meta) => {
+      if (Math.round(meta.percent) % 10 === 0) {
+        showToast(`Compactando ${Math.round(meta.percent)}%…`);
+      }
+    }
+  );
+  return { blob, filename: `hospitalar-2026_${stamp}.zip` };
+}
+
+async function exportZipDownload() {
+  const btn = document.getElementById('btn-export-zip');
+  btn.disabled = true; const orig = btn.textContent; btn.textContent = 'Gerando ZIP…';
+  try {
+    const { blob, filename } = await buildZip();
+    download(filename, blob);
+    showToast('ZIP pronto');
+  } catch (e) {
+    alert('Erro: ' + e.message);
+  } finally {
+    btn.disabled = false; btn.textContent = orig;
+  }
+}
+
+async function exportShareDrive() {
+  const btn = document.getElementById('btn-export-share');
+  btn.disabled = true; const orig = btn.textContent; btn.textContent = 'Gerando ZIP…';
+  try {
+    const { blob, filename } = await buildZip();
+    const file = new File([blob], filename, { type: 'application/zip' });
+    // Tenta share API com arquivo
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      await navigator.share({
+        files: [file],
+        title: 'Hospitalar 2026 — Export',
+        text: `Visitas registradas na Feira Hospitalar 2026 (${new Date().toLocaleDateString('pt-BR')})`
+      });
+      showToast('Compartilhado');
+    } else {
+      // Fallback: download
+      download(filename, blob);
+      alert('Seu navegador não suporta compartilhar arquivo direto. Baixei o ZIP — abra o Drive e faça upload manual.');
+    }
+  } catch (e) {
+    if (e.name !== 'AbortError') alert('Erro: ' + e.message);
+  } finally {
+    btn.disabled = false; btn.textContent = orig;
+  }
+}
+
 function toCSV(rows) {
   return rows.map(r => r.map(cell => {
     const s = String(cell ?? '');
@@ -951,6 +1115,8 @@ function setupEvents() {
   document.getElementById('btn-export-json').onclick = exportJSON;
   document.getElementById('btn-export-csv').onclick = exportCSV;
   document.getElementById('btn-export-agenda-csv').onclick = exportAgendaCSV;
+  document.getElementById('btn-export-zip').onclick = exportZipDownload;
+  document.getElementById('btn-export-share').onclick = exportShareDrive;
   document.getElementById('fab-add').onclick = openPoolModal;
   document.getElementById('pool-close').onclick = closePoolModal;
   document.getElementById('pool-modal').addEventListener('click', (e) => {
