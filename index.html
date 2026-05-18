@@ -19,6 +19,7 @@
 <header id="top-bar">
   <div id="title-row">
     <div id="title">Hospitalar</div>
+    <button id="btn-sync" title="Atualizar do Google Sheets">↻</button>
     <div id="counter" class="muted">…</div>
   </div>
   <div id="search-row" class="hide-on-detail">
@@ -87,6 +88,11 @@
     <hr>
     <h3>Atenção</h3>
     <p class="muted">Dados ficam no seu celular. Se desinstalar o app ou limpar dados do navegador, perde tudo. Faça export ao final de cada dia.</p>
+    <hr>
+    <h3>Sincronizar do Google Sheets</h3>
+    <p class="muted">Baixa a planilha original e atualiza nome, status, rua/stand e prospects. Suas visitas, fotos, áudios e empresas adicionadas pelo app ficam intactas.</p>
+    <button class="btn primary" id="btn-export-sync">Atualizar do Sheets agora</button>
+    <div class="muted" id="sync-status" style="margin-top:8px"></div>
     <hr>
     <h3>Stats</h3>
     <div id="stats"></div>

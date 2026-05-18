@@ -22,6 +22,7 @@ let mediaRecorder = null;
 let recordedChunks = [];
 let recAudioBlob = null;
 const CUSTOM_ID_BASE = 100000;
+const SHEETS_CSV_URL = 'https://docs.google.com/spreadsheets/d/1RPA_YAnZnoYW1ZkOphoXDm74s1enP0Qvnm_h23tIYCI/export?format=csv&gid=1770656616';
 
 // ------- BOOTSTRAP -------
 async function bootstrap() {
@@ -51,11 +52,14 @@ async function bootstrap() {
 function populateRuas() {
   const ruas = [...new Set(empresas.map(e => e.rua).filter(Boolean))].sort();
   const sel = document.getElementById('rua-select');
+  const cur = sel.value;
+  sel.innerHTML = '<option value="">Todas as ruas</option>';
   ruas.forEach(r => {
     const opt = document.createElement('option');
     opt.value = r; opt.textContent = `Rua ${r}`;
     sel.appendChild(opt);
   });
+  if (cur) sel.value = cur;
 }
 
 async function updateCounter() {
@@ -1006,7 +1010,144 @@ function setView(viewId) {
   if (viewId !== 'detail-view') document.body.classList.remove('detail-mode');
   if (viewId === 'agenda-view') renderAgenda();
   if (viewId === 'extras-view') renderExtrasForm();
-  if (viewId === 'export-view') renderExportStats();
+  if (viewId === 'export-view') { renderExportStats(); updateSyncLabel(); }
+}
+
+// ------- SYNC GOOGLE SHEETS -------
+function parseCSV(text) {
+  const rows = []; let cur = '', row = [], inQ = false;
+  for (let i = 0; i < text.length; i++) {
+    const c = text[i];
+    if (inQ) {
+      if (c === '"' && text[i+1] === '"') { cur += '"'; i++; }
+      else if (c === '"') inQ = false;
+      else cur += c;
+    } else {
+      if (c === '"') inQ = true;
+      else if (c === ',') { row.push(cur); cur = ''; }
+      else if (c === '\n') { row.push(cur); rows.push(row); row = []; cur = ''; }
+      else if (c === '\r') {}
+      else cur += c;
+    }
+  }
+  if (cur || row.length) { row.push(cur); rows.push(row); }
+  return rows;
+}
+function parseEmpresaStand(s) {
+  s = s.trim();
+  let m = s.match(/^(.+),\s*([A-Z])-([A-Za-z0-9]+)\s*$/);
+  if (m) return { empresa: m[1].trim(), rua: m[2].toUpperCase(), stand: m[3].toLowerCase() };
+  if (s.includes(',')) {
+    const idx = s.lastIndexOf(',');
+    const nome = s.substring(0, idx).trim();
+    const tail = s.substring(idx+1).trim();
+    m = tail.match(/^([A-Z])-?([A-Za-z0-9]+)$/i);
+    if (m) return { empresa: nome, rua: m[1].toUpperCase(), stand: m[2].toLowerCase() };
+    m = tail.match(/([A-Z])-([A-Za-z0-9]+)/i);
+    if (m) return { empresa: nome, rua: m[1].toUpperCase(), stand: m[2].toLowerCase() };
+    return { empresa: nome, rua: '', stand: '' };
+  }
+  return { empresa: s, rua: '', stand: '' };
+}
+function normName(s) {
+  return (s||'').toLowerCase().normalize('NFD')
+    .replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]/g, '');
+}
+function normStatusSync(s) {
+  s = (s||'').trim().toLowerCase();
+  if (s.startsWith('sim')) return 'sim';
+  if (s.startsWith('n')) return 'nao';
+  if (s.startsWith('prov')) return 'provavel';
+  if (s.startsWith('int')) return 'intern';
+  return '';
+}
+
+async function syncFromSheets() {
+  const headerBtn = document.getElementById('btn-sync');
+  const exportBtn = document.getElementById('btn-export-sync');
+  const setBusy = (b) => {
+    if (headerBtn) headerBtn.classList.toggle('spinning', b);
+    if (exportBtn) { exportBtn.disabled = b; exportBtn.textContent = b ? 'Atualizando…' : 'Atualizar do Sheets agora'; }
+  };
+  setBusy(true);
+  try {
+    const res = await fetch(SHEETS_CSV_URL + '&t=' + Date.now(), { cache: 'no-store' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const text = await res.text();
+    const rows = parseCSV(text); rows.shift();
+
+    const remote = [];
+    for (const r of rows) {
+      if (!r[0] || !r[0].trim()) continue;
+      const { empresa, rua, stand } = parseEmpresaStand(r[0]);
+      const status = normStatusSync(r[1] || '');
+      const prospects = [
+        { nome: (r[2]||'').trim(), linkedin: (r[3]||'').trim() },
+        { nome: (r[4]||'').trim(), linkedin: (r[5]||'').trim() },
+      ];
+      const cleanedProspects = prospects.map(p => ({
+        nome: p.nome,
+        linkedin: (p.linkedin && p.linkedin.toLowerCase().includes('linkedin.com')) ? p.linkedin : ''
+      })).filter(p => p.nome || p.linkedin);
+      remote.push({ empresa, rua, stand, status, prospects: cleanedProspects, norm: normName(empresa) });
+    }
+
+    const local = await db.getEmpresas();
+    const localByNorm = {};
+    for (const l of local) localByNorm[normName(l.empresa)] = l;
+
+    let updated = 0, added = 0, unchanged = 0;
+    const nonCustomIds = local.filter(e => e.id < CUSTOM_ID_BASE).map(e => e.id);
+    let nextId = (nonCustomIds.length ? Math.max(...nonCustomIds) : 0) + 1;
+
+    const toSave = [];
+    for (const r of remote) {
+      const exist = localByNorm[r.norm];
+      if (exist) {
+        const changed = exist.empresa !== r.empresa || exist.rua !== r.rua
+          || exist.stand !== r.stand || exist.status !== r.status
+          || JSON.stringify(exist.prospects||[]) !== JSON.stringify(r.prospects);
+        if (changed) {
+          toSave.push({
+            id: exist.id,
+            empresa: r.empresa, rua: r.rua, stand: r.stand,
+            status: r.status, prospects: r.prospects,
+            custom: !!exist.custom,
+          });
+          updated++;
+        } else unchanged++;
+      } else {
+        toSave.push({
+          id: nextId++,
+          empresa: r.empresa, rua: r.rua, stand: r.stand,
+          status: r.status, prospects: r.prospects,
+        });
+        added++;
+      }
+    }
+
+    if (toSave.length) await db.bulkEmpresas(toSave);
+    empresas = await db.getEmpresas();
+    empresas.sort((a, b) => a.empresa.localeCompare(b.empresa, 'pt-BR'));
+    populateRuas(); render(); updateCounter();
+
+    localStorage.setItem('lastSync', new Date().toISOString());
+    updateSyncLabel();
+    showToast(`${updated} atualizadas · ${added} novas · ${unchanged} sem mudança`);
+  } catch (e) {
+    alert('Erro ao sincronizar: ' + e.message + '\n\nVerifique sua conexão com a internet.');
+  } finally {
+    setBusy(false);
+  }
+}
+
+function updateSyncLabel() {
+  const el = document.getElementById('sync-status');
+  if (!el) return;
+  const last = localStorage.getItem('lastSync');
+  el.textContent = last
+    ? 'Último sync: ' + new Date(last).toLocaleString('pt-BR')
+    : 'Ainda não sincronizado nesta sessão';
 }
 
 // ------- POOL DE EMPRESAS NOVAS -------
@@ -1118,6 +1259,8 @@ function setupEvents() {
   document.getElementById('btn-export-agenda-csv').onclick = exportAgendaCSV;
   document.getElementById('btn-export-zip').onclick = exportZipDownload;
   document.getElementById('btn-export-share').onclick = exportShareDrive;
+  document.getElementById('btn-sync').onclick = syncFromSheets;
+  document.getElementById('btn-export-sync').onclick = syncFromSheets;
   document.getElementById('fab-add').onclick = openPoolModal;
   document.getElementById('pool-close').onclick = closePoolModal;
   document.getElementById('pool-modal').addEventListener('click', (e) => {
