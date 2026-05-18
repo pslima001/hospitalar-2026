@@ -121,7 +121,20 @@
 <script src="app.js"></script>
 <script>
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js').catch(console.warn);
+  navigator.serviceWorker.register('sw.js').then(reg => {
+    reg.addEventListener('updatefound', () => {
+      const nw = reg.installing;
+      if (!nw) return;
+      nw.addEventListener('statechange', () => {
+        if (nw.state === 'installed' && navigator.serviceWorker.controller) {
+          // Nova versão disponível: recarrega automaticamente
+          window.location.reload();
+        }
+      });
+    });
+    // Re-checa a cada minuto se app fica aberto
+    setInterval(() => reg.update().catch(()=>{}), 60000);
+  }).catch(console.warn);
 }
 </script>
 </body>

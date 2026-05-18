@@ -1,4 +1,4 @@
-const CACHE = 'hospitalar-v7';
+const CACHE = 'hospitalar-v8';
 const ASSETS = [
   './',
   './index.html',
@@ -29,18 +29,32 @@ self.addEventListener('activate', (e) => {
 
 self.addEventListener('fetch', (e) => {
   if (e.request.method !== 'GET') return;
-  e.respondWith(
-    caches.match(e.request).then(cached => {
-      if (cached) return cached;
-      return fetch(e.request).then(res => {
-        // Cacheia GETs same-origin com sucesso
-        const url = new URL(e.request.url);
-        if (url.origin === location.origin && res.ok) {
+  const url = new URL(e.request.url);
+  if (url.origin !== location.origin) return;
+  const path = url.pathname;
+  const isCore = path.endsWith('.html') || path.endsWith('.js') ||
+                 path.endsWith('.css') || path.endsWith('/');
+  if (isCore) {
+    // Network-first: garante que mudanças no app cheguem rápido
+    e.respondWith(
+      fetch(e.request).then(res => {
+        if (res.ok) {
           const copy = res.clone();
           caches.open(CACHE).then(c => c.put(e.request, copy));
         }
         return res;
-      }).catch(() => cached);
-    })
-  );
+      }).catch(() => caches.match(e.request))
+    );
+  } else {
+    // Cache-first: imagens, jsons, libs
+    e.respondWith(
+      caches.match(e.request).then(cached => cached || fetch(e.request).then(res => {
+        if (res.ok) {
+          const copy = res.clone();
+          caches.open(CACHE).then(c => c.put(e.request, copy));
+        }
+        return res;
+      }))
+    );
+  }
 });
