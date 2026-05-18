@@ -64,13 +64,11 @@ function populateRuas() {
 
 async function updateCounter() {
   const visitas = await db.getAllVisitas();
-  const visMap = Object.fromEntries(visitas.map(v => [v.empresa_id, v]));
   const prio = empresas.filter(e => e.status === 'sim').length;
-  const prioFeitas = empresas.filter(e => e.status === 'sim' && visMap[e.id]?.status === 'feita').length;
   const feitas = visitas.filter(v => v.status === 'feita').length;
   const voltar = visitas.filter(v => v.status === 'voltar').length;
   document.getElementById('counter').textContent =
-    `${prioFeitas}/${prio} prio · ${feitas} feitas · ${voltar} voltar`;
+    `${prio} prioridade · ${feitas} feitas · ${voltar} voltar`;
 }
 
 // ------- LIST VIEW -------
