@@ -32,6 +32,7 @@
     <button class="chip" data-filter="agenda">Voltar</button>
     <button class="chip" data-filter="feita">Feitas</button>
     <button class="chip" data-filter="naofeita">Não feitas</button>
+    <button class="chip" data-filter="custom">Adicionadas</button>
   </div>
   <div id="rua-row" class="hide-on-detail">
     <select id="rua-select"><option value="">Todas as ruas</option></select>
@@ -43,7 +44,23 @@
   <section id="list-view" class="view active">
     <ul id="empresa-list"></ul>
     <div id="empty-state" class="empty hidden">Nada encontrado.</div>
+    <button id="fab-add" title="Adicionar empresa">+</button>
   </section>
+
+  <!-- Modal picker pool -->
+  <div id="pool-modal" class="modal hidden">
+    <div class="modal-card">
+      <header>
+        <strong>Adicionar empresa</strong>
+        <button id="pool-close">×</button>
+      </header>
+      <input id="pool-search" type="search" placeholder="Buscar empresa do pool…">
+      <div id="pool-list"></div>
+      <div class="muted" style="padding:8px 12px">
+        Não encontrou? <button class="link" id="pool-manual">Criar manualmente</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Vista de detalhe -->
   <section id="detail-view" class="view"></section>

@@ -1,4 +1,4 @@
-const CACHE = 'hospitalar-v2';
+const CACHE = 'hospitalar-v3';
 const ASSETS = [
   './',
   './index.html',
@@ -6,6 +6,7 @@ const ASSETS = [
   './app.js',
   './db.js',
   './data.json',
+  './pool.json',
   './manifest.json',
   './icon-192.png',
   './icon-512.png',

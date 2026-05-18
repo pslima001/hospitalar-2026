@@ -234,3 +234,55 @@ hr { border: none; border-top: 1px solid var(--border); margin: 16px 0; }
   pointer-events: none;
 }
 .toast.show { opacity: 1; }
+
+/* FAB */
+#fab-add {
+  position: fixed; right: 16px; bottom: calc(70px + env(safe-area-inset-bottom));
+  width: 56px; height: 56px; border-radius: 50%; border: none;
+  background: var(--accent); color: #fff; font-size: 28px; font-weight: 400;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25); cursor: pointer; z-index: 90;
+  display: none; align-items: center; justify-content: center; line-height: 1;
+}
+body.view-list-view #fab-add { display: flex; }
+
+/* Modal */
+.modal {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+  z-index: 300; display: flex; align-items: flex-end; justify-content: center;
+}
+.modal.hidden { display: none; }
+.modal-card {
+  background: #fff; border-radius: 16px 16px 0 0;
+  width: 100%; max-height: 85vh; display: flex; flex-direction: column;
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.modal-card header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 12px 16px; border-bottom: 1px solid var(--border);
+}
+.modal-card header button {
+  background: none; border: none; font-size: 24px; color: var(--muted); cursor: pointer;
+}
+#pool-search {
+  margin: 8px 12px; padding: 10px; border: 1px solid var(--border); border-radius: 6px;
+}
+#pool-list {
+  overflow-y: auto; flex: 1; padding: 0 12px;
+}
+.pool-item {
+  display: flex; gap: 10px; align-items: center; padding: 10px 0;
+  border-bottom: 1px solid var(--border); cursor: pointer;
+}
+.pool-item:last-child { border: none; }
+.pool-item .stand-mini {
+  background: var(--primary); color: #fff; padding: 4px 8px; border-radius: 6px;
+  font-size: 12px; font-weight: 600; min-width: 50px; text-align: center;
+}
+.pool-item .stand-mini.no-stand { background: var(--muted); font-size: 10px; }
+.pool-item .nome { font-weight: 600; font-size: 14px; flex: 1; }
+.pool-item .secao { font-size: 11px; color: var(--muted); }
+
+.link {
+  background: none; border: none; color: var(--primary);
+  text-decoration: underline; cursor: pointer; font: inherit;
+}

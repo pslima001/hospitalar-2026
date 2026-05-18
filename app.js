@@ -13,6 +13,7 @@ for (let h = 10; h <= 21; h++) {
 }
 
 let empresas = [];
+let poolList = [];
 let currentView = 'list-view';
 let currentEmpresaId = null;
 let currentFilter = 'all';
@@ -20,6 +21,7 @@ let currentRua = '';
 let mediaRecorder = null;
 let recordedChunks = [];
 let recAudioBlob = null;
+const CUSTOM_ID_BASE = 100000;
 
 // ------- BOOTSTRAP -------
 async function bootstrap() {
@@ -33,6 +35,14 @@ async function bootstrap() {
   }
   empresas = await db.getEmpresas();
   empresas.sort((a, b) => a.empresa.localeCompare(b.empresa, 'pt-BR'));
+  // Carrega pool de expositores extras (não-visitados mas disponíveis)
+  try {
+    const pr = await fetch('pool.json');
+    poolList = await pr.json();
+  } catch (e) {
+    console.warn('Pool não carregou', e);
+    poolList = [];
+  }
   populateRuas();
   render();
   updateCounter();
@@ -75,6 +85,9 @@ async function render() {
     }
     if (currentFilter === 'naofeita') {
       const v = visMap[e.id]; if (v && v.status === 'feita') return false;
+    }
+    if (currentFilter === 'custom') {
+      if (!e.custom) return false;
     }
     if (q) {
       const hay = (e.empresa + ' ' + e.rua + e.stand + ' ' +
@@ -831,6 +844,91 @@ function setView(viewId) {
   if (viewId === 'export-view') renderExportStats();
 }
 
+// ------- POOL DE EMPRESAS NOVAS -------
+function openPoolModal() {
+  document.getElementById('pool-modal').classList.remove('hidden');
+  document.getElementById('pool-search').value = '';
+  renderPool('');
+  setTimeout(() => document.getElementById('pool-search').focus(), 100);
+}
+
+function closePoolModal() {
+  document.getElementById('pool-modal').classList.add('hidden');
+}
+
+function renderPool(q) {
+  const ql = q.toLowerCase().trim();
+  // Exclui o que já está na base local (empresas já adicionadas)
+  const baseNames = new Set(empresas.map(e =>
+    e.empresa.toLowerCase().replace(/[^a-z0-9]/g, '')));
+  const filtered = poolList.filter(p => {
+    const norm = p.empresa.toLowerCase().replace(/[^a-z0-9]/g, '');
+    if (baseNames.has(norm)) return false;
+    if (!ql) return true;
+    const hay = (p.empresa + ' ' + p.rua + p.stand + ' ' + (p.secao||'')).toLowerCase();
+    return hay.includes(ql);
+  });
+  const list = document.getElementById('pool-list');
+  if (filtered.length === 0) {
+    list.innerHTML = '<div class="muted" style="padding:16px; text-align:center">Sem resultados no pool.<br>Use "Criar manualmente" abaixo.</div>';
+    return;
+  }
+  list.innerHTML = filtered.map(p => `
+    <div class="pool-item" data-empresa="${escapeHtml(p.empresa)}"
+         data-rua="${escapeHtml(p.rua)}" data-stand="${escapeHtml(p.stand)}">
+      <div class="stand-mini ${p.stand ? '' : 'no-stand'}">
+        ${p.stand ? `${p.rua}-${p.stand}` : 'sem stand'}
+      </div>
+      <div style="flex:1; min-width:0">
+        <div class="nome">${escapeHtml(p.empresa)}</div>
+        <div class="secao">${escapeHtml(p.secao || '')}</div>
+      </div>
+      <div style="color: var(--accent); font-size: 22px; font-weight: 600">+</div>
+    </div>
+  `).join('');
+  list.querySelectorAll('.pool-item').forEach(el => {
+    el.onclick = () => addFromPool({
+      empresa: el.dataset.empresa,
+      rua: el.dataset.rua,
+      stand: el.dataset.stand,
+    });
+  });
+}
+
+async function addFromPool(p) {
+  // Cria empresa custom com id alto e abre detalhe
+  const allCustomIds = empresas.filter(e => e.id >= CUSTOM_ID_BASE).map(e => e.id);
+  const newId = allCustomIds.length ? Math.max(...allCustomIds) + 1 : CUSTOM_ID_BASE;
+  const novo = {
+    id: newId,
+    empresa: p.empresa,
+    rua: p.rua || '',
+    stand: p.stand || '',
+    status: '',
+    prospects: [],
+    custom: true,
+  };
+  await db.putEmpresa(novo);
+  empresas.push(novo);
+  empresas.sort((a, b) => a.empresa.localeCompare(b.empresa, 'pt-BR'));
+  closePoolModal();
+  populateRuas();
+  showToast('Adicionada: ' + p.empresa);
+  openDetail(newId);
+}
+
+async function createManualEmpresa() {
+  const nome = prompt('Nome da empresa:');
+  if (!nome || !nome.trim()) return;
+  const standRaw = prompt('Stand (ex: A-10, ou deixe vazio):') || '';
+  const m = standRaw.match(/([A-Z])-?([A-Za-z0-9]+)/i);
+  await addFromPool({
+    empresa: nome.trim(),
+    rua: m ? m[1].toUpperCase() : '',
+    stand: m ? m[2].toLowerCase() : '',
+  });
+}
+
 // ------- EVENTOS GLOBAIS -------
 function setupEvents() {
   document.getElementById('q').addEventListener('input', debounce(render, 200));
@@ -852,6 +950,18 @@ function setupEvents() {
   document.getElementById('btn-export-json').onclick = exportJSON;
   document.getElementById('btn-export-csv').onclick = exportCSV;
   document.getElementById('btn-export-agenda-csv').onclick = exportAgendaCSV;
+  document.getElementById('fab-add').onclick = openPoolModal;
+  document.getElementById('pool-close').onclick = closePoolModal;
+  document.getElementById('pool-modal').addEventListener('click', (e) => {
+    if (e.target.id === 'pool-modal') closePoolModal();
+  });
+  document.getElementById('pool-search').addEventListener('input', debounce((e) => {
+    renderPool(e.target.value);
+  }, 150));
+  document.getElementById('pool-manual').onclick = () => {
+    closePoolModal();
+    createManualEmpresa();
+  };
   document.getElementById('btn-reset').onclick = async () => {
     if (!confirm('Isso apaga TODOS os dados (visitas, contatos, fotos, áudios). Confirma?')) return;
     if (!confirm('Tem certeza absoluta? Faça export antes.')) return;
