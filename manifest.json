@@ -1,0 +1,16 @@
+{
+  "name": "Hospitalar 2026",
+  "short_name": "Hospitalar",
+  "description": "Registro de visitas na Feira Hospitalar 2026",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0a4d8c",
+  "theme_color": "#0a4d8c",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

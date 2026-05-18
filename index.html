@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
+<meta name="theme-color" content="#0a4d8c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Hospitalar">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>Hospitalar 2026</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<header id="top-bar">
+  <div id="title-row">
+    <div id="title">Hospitalar</div>
+    <div id="counter" class="muted">…</div>
+  </div>
+  <div id="search-row" class="hide-on-detail">
+    <input id="q" type="search" placeholder="Buscar empresa, prospect, rua…" autocomplete="off">
+  </div>
+  <div id="filter-row" class="hide-on-detail">
+    <button class="chip" data-filter="all">Todas</button>
+    <button class="chip" data-filter="sim">Prioridade</button>
+    <button class="chip" data-filter="provavel">Provável</button>
+    <button class="chip" data-filter="intern">Intern</button>
+    <button class="chip" data-filter="agenda">Voltar</button>
+    <button class="chip" data-filter="feita">Feitas</button>
+    <button class="chip" data-filter="naofeita">Não feitas</button>
+  </div>
+  <div id="rua-row" class="hide-on-detail">
+    <select id="rua-select"><option value="">Todas as ruas</option></select>
+  </div>
+</header>
+
+<main id="app">
+  <!-- Vista de lista -->
+  <section id="list-view" class="view active">
+    <ul id="empresa-list"></ul>
+    <div id="empty-state" class="empty hidden">Nada encontrado.</div>
+  </section>
+
+  <!-- Vista de detalhe -->
+  <section id="detail-view" class="view"></section>
+
+  <!-- Vista de agenda -->
+  <section id="agenda-view" class="view"></section>
+
+  <!-- Vista de extras (scans camiseta) -->
+  <section id="extras-view" class="view"></section>
+
+  <!-- Vista de export -->
+  <section id="export-view" class="view">
+    <h2>Exportar</h2>
+    <p class="muted">Baixa todos os dados que você registrou.</p>
+    <button class="btn primary" id="btn-export-json">Baixar JSON</button>
+    <button class="btn" id="btn-export-csv">Baixar CSV (visitas)</button>
+    <button class="btn" id="btn-export-agenda-csv">Baixar CSV (agenda)</button>
+    <hr>
+    <h3>Atenção</h3>
+    <p class="muted">Dados ficam no seu celular. Se desinstalar o app ou limpar dados do navegador, perde tudo. Faça export ao final de cada dia.</p>
+    <hr>
+    <h3>Stats</h3>
+    <div id="stats"></div>
+    <hr>
+    <button class="btn danger" id="btn-reset">Apagar tudo</button>
+  </section>
+</main>
+
+<nav id="bottom-nav">
+  <button data-view="list-view" class="nav-btn active">
+    <span class="icon">≡</span><span>Empresas</span>
+  </button>
+  <button data-view="agenda-view" class="nav-btn">
+    <span class="icon">◷</span><span>Agenda</span>
+  </button>
+  <button data-view="extras-view" class="nav-btn">
+    <span class="icon">＋</span><span>Camiseta</span>
+  </button>
+  <button data-view="export-view" class="nav-btn">
+    <span class="icon">↓</span><span>Export</span>
+  </button>
+</nav>
+
+<script src="db.js"></script>
+<script src="app.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(console.warn);
+}
+</script>
+</body>
+</html>

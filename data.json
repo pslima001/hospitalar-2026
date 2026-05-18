@@ -1,0 +1,3422 @@
+[
+ {
+  "id": 1,
+  "empresa": "O-LINKE",
+  "rua": "J",
+  "stand": "40f",
+  "status": "nao",
+  "prospects": []
+ },
+ {
+  "id": 2,
+  "empresa": "SANTÉ",
+  "rua": "F",
+  "stand": "90",
+  "status": "provavel",
+  "prospects": [
+   {
+    "nome": "Pierr Maxime",
+    "linkedin": "https://www.linkedin.com/in/pierrecolnet/"
+   }
+  ]
+ },
+ {
+  "id": 3,
+  "empresa": "INOVAMED",
+  "rua": "H",
+  "stand": "40",
+  "status": "sim",
+  "prospects": [
+   {
+    "nome": "Jhonatan Boni",
+    "linkedin": "https://www.linkedin.com/in/jhonatan-boni-848581148/"
+   }
+  ]
+ },
+ {
+  "id": 4,
+  "empresa": "Formosa",
+  "rua": "A",
+  "stand": "155",
+  "status": "intern",
+  "prospects": []
+ },
+ {
+  "id": 5,
+  "empresa": "SUPERA",
+  "rua": "D",
+  "stand": "150",
+  "status": "nao",
+  "prospects": []
+ },
+ {
+  "id": 6,
+  "empresa": "Imediato",
+  "rua": "H",
+  "stand": "69",
+  "status": "nao",
+  "prospects": []
+ },
+ {
+  "id": 7,
+  "empresa": "PORTAL HOSPITALAR",
+  "rua": "H",
+  "stand": "20",
+  "status": "nao",
+  "prospects": []
+ },
+ {
+  "id": 8,
+  "empresa": "1A+A+A",
+  "rua": "G",
+  "stand": "170h",
+  "status": "intern",
+  "prospects": []
+ },
+ {
+  "id": 9,
+  "empresa": "Linear",
+  "rua": "A",
+  "stand": "30",
+  "status": "nao",
+  "prospects": []
+ },
+ {
+  "id": 10,
+  "empresa": "MEDICAR SOLUÇÕES EM SAÚDE",
+  "rua": "K",
+  "stand": "40",
+  "status": "sim",
+  "prospects": [
+   {
+    "nome": "Cristiano Alessandro",
+    "linkedin": "https://www.linkedin.com/in/cristiano-alessandro-leite-de-freitas-42135b3b/"
+   }
+  ]
+ },
+ {
+  "id": 11,
+  "empresa": "FIAT",
+  "rua": "K",
+  "stand": "18",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 12,
+  "empresa": "LANCO",
+  "rua": "F",
+  "stand": "45",
+  "status": "sim",
+  "prospects": [
+   {
+    "nome": "Marcos Eli",
+    "linkedin": "https://www.linkedin.com/in/marcos-eli-alves-12503423b/"
+   }
+  ]
+ },
+ {
+  "id": 13,
+  "empresa": "CELER",
+  "rua": "D",
+  "stand": "128",
+  "status": "sim",
+  "prospects": [
+   {
+    "nome": "Denilson Laudares",
+    "linkedin": "https://www.linkedin.com/in/denilson-laudares-rodrigues-07ba02b/"
+   }
+  ]
+ },
+ {
+  "id": 14,
+  "empresa": "Transform",
+  "rua": "B",
+  "stand": "83",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 15,
+  "empresa": "OPTIKA",
+  "rua": "E",
+  "stand": "181",
+  "status": "provavel",
+  "prospects": [
+   {
+    "nome": "Agnaldo Manotoan",
+    "linkedin": ""
+   }
+  ]
+ },
+ {
+  "id": 16,
+  "empresa": "Maera",
+  "rua": "F",
+  "stand": "91",
+  "status": "nao",
+  "prospects": [
+   {
+    "nome": "Bruna Manetta",
+    "linkedin": "https://www.linkedin.com/in/bruna-manetta/"
+   }
+  ]
+ },
+ {
+  "id": 17,
+  "empresa": "CEPALAB",
+  "rua": "C",
+  "stand": "131",
+  "status": "sim",
+  "prospects": [
+   {
+    "nome": "Jorge Rezende",
+    "linkedin": "https://www.linkedin.com/in/jorge-rezende-594869b2/"
+   },
+   {
+    "nome": "Gabriel Coxir",
+    "linkedin": "https://www.linkedin.com/in/gabrielcoxir/"
+   }
+  ]
+ },
+ {
+  "id": 18,
+  "empresa": "MEDI SAÚDE PRODUTOS MÉDICOS HOSPITALARES",
+  "rua": "C",
+  "stand": "31",
+  "status": "sim",
+  "prospects": [
+   {
+    "nome": "Fernando",
+    "linkedin": "https://www.linkedin.com/in/fernando-almeida-9a881a122/"
+   },
+   {
+    "nome": "Joao",
+    "linkedin": "https://www.linkedin.com/in/jo%25C3%25A3o-bosco-dias-ferreira-filho-063260217?skipRedirect=true&miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAADatLksB1_vrv9xXK8K8e8die6JRNYwlPPo"
+   }
+  ]
+ },
+ {
+  "id": 19,
+  "empresa": "TETO",
+  "rua": "F",
+  "stand": "70",
+  "status": "nao",
+  "prospects": [
+   {
+    "nome": "Rodrigo Motta",
+    "linkedin": "https://www.linkedin.com/in/rodrigo-g-motta-8156545/"
+   }
+  ]
+ },
+ {
+  "id": 20,
+  "empresa": "FRESENIUS KABI BRASIL LTDA",
+  "rua": "G",
+  "stand": "28",
+  "status": "sim",
+  "prospects": [
+   {
+    "nome": "Paulo",
+    "linkedin": "https://www.linkedin.com/in/pauloberti/"
+   },
+   {
+    "nome": "Jorge",
+    "linkedin": "https://www.linkedin.com/in/jorge-stuart-ba160b27/"
+   }
+  ]
+ },
+ {
+  "id": 21,
+  "empresa": "CIRÚRGICA FERNANDES",
+  "rua": "C",
+  "stand": "160",
+  "status": "sim",
+  "prospects": [
+   {
+    "nome": "Rodrigo Ribeiro",
+    "linkedin": "https://www.linkedin.com/in/rodrigo-fonseca-ribeiro/"
+   }
+  ]
+ },
+ {
+  "id": 22,
+  "empresa": "ALTERNATIVA,K-30 | L-26 | L-38",
+  "rua": "",
+  "stand": "",
+  "status": "sim",
+  "prospects": [
+   {
+    "nome": "Eduardo",
+    "linkedin": "https://www.linkedin.com/in/eduardo-louren%C3%A7o-6042b36a/"
+   }
+  ]
+ },
+ {
+  "id": 23,
+  "empresa": "VIDA HOSPITALAR",
+  "rua": "E",
+  "stand": "195",
+  "status": "sim",
+  "prospects": []
+ },
+ {
+  "id": 24,
+  "empresa": "IDEAR",
+  "rua": "G",
+  "stand": "220h",
+  "status": "nao",
+  "prospects": [
+   {
+    "nome": "Miguel",
+    "linkedin": "https://www.linkedin.com/in/miguel-angel-picardi-35396636/"
+   }
+  ]
+ },
+ {
+  "id": 25,
+  "empresa": "SEFAM",
+  "rua": "G",
+  "stand": "202a",
+  "status": "nao",
+  "prospects": []
+ },
+ {
+  "id": 26,
+  "empresa": "CLOUDIA",
+  "rua": "A",
+  "stand": "106",
+  "status": "nao",
+  "prospects": []
+ },
+ {
+  "id": 27,
+  "empresa": "B BRAUN",
+  "rua": "D",
+  "stand": "31",
+  "status": "sim",
+  "prospects": [
+   {
+    "nome": "Michael Dickscheid",
+    "linkedin": "https://www.linkedin.com/in/michaeldickscheid/"
+   },
+   {
+    "nome": "Izabella",
+    "linkedin": "https://www.linkedin.com/in/izabellabastosfernandes/"
+   }
+  ]
+ },
+ {
+  "id": 28,
+  "empresa": "BIOBASE",
+  "rua": "M",
+  "stand": "07",
+  "status": "sim",
+  "prospects": []
+ },
+ {
+  "id": 29,
+  "empresa": "Elis",
+  "rua": "F",
+  "stand": "111",
+  "status": "nao",
+  "prospects": []
+ },
+ {
+  "id": 30,
+  "empresa": "SENAC",
+  "rua": "F",
+  "stand": "168",
+  "status": "nao",
+  "prospects": []
+ },
+ {
+  "id": 31,
+  "empresa": "SOL-M",
+  "rua": "C",
+  "stand": "129",
+  "status": "nao",
+  "prospects": []
+ },
+ {
+  "id": 32,
+  "empresa": "Solara Laboratories",
+  "rua": "D",
+  "stand": "300b",
+  "status": "intern",
+  "prospects": []
+ },
+ {
+  "id": 33,
+  "empresa": "OXIGENOTERAPIA",
+  "rua": "G",
+  "stand": "220c",
+  "status": "intern",
+  "prospects": []
+ },
+ {
+  "id": 34,
+  "empresa": "HORIZONTE HOSPITALAR",
+  "rua": "B",
+  "stand": "81",
+  "status": "provavel",
+  "prospects": []
+ },
+ {
+  "id": 35,
+  "empresa": "White Martins Gases Industriais",
+  "rua": "G",
+  "stand": "21",
+  "status": "sim",
+  "prospects": [
+   {
+    "nome": "Jaqueline Souza",
+    "linkedin": "https://www.linkedin.com/in/jaqueline-valerio-souza/"
+   }
+  ]
+ },
+ {
+  "id": 36,
+  "empresa": "CITROEN",
+  "rua": "K",
+  "stand": "16",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 37,
+  "empresa": "FANEM",
+  "rua": "F",
+  "stand": "39",
+  "status": "sim",
+  "prospects": [
+   {
+    "nome": "Roberto Massaro",
+    "linkedin": "https://www.linkedin.com/in/roberto-massaro-aa8316195/"
+   },
+   {
+    "nome": "Rubens Massaro",
+    "linkedin": "https://www.linkedin.com/in/rubens-massaro-6904273b/"
+   }
+  ]
+ },
+ {
+  "id": 38,
+  "empresa": "BRASIL MEDICAL",
+  "rua": "E",
+  "stand": "209",
+  "status": "nao",
+  "prospects": []
+ },
+ {
+  "id": 39,
+  "empresa": "SIMPRO",
+  "rua": "C",
+  "stand": "145",
+  "status": "sim",
+  "prospects": [
+   {
+    "nome": "Jorge Peñaranda",
+    "linkedin": "https://www.linkedin.com/in/jorge-pe%C3%B1aranda-80b48b97/"
+   }
+  ]
+ },
+ {
+  "id": 40,
+  "empresa": "AMCOR",
+  "rua": "I",
+  "stand": "16",
+  "status": "sim",
+  "prospects": [
+   {
+    "nome": "Daniel Figueiredo",
+    "linkedin": "https://www.linkedin.com/in/danielzfigueiredo/"
+   },
+   {
+    "nome": "Gustavo Botelho",
+    "linkedin": "https://www.linkedin.com/in/gustavobotelho/"
+   }
+  ]
+ },
+ {
+  "id": 41,
+  "empresa": "custo med",
+  "rua": "G",
+  "stand": "170f",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 42,
+  "empresa": "Cirúrgica São Felipe Produtos Para Saúde",
+  "rua": "I",
+  "stand": "08",
+  "status": "sim",
+  "prospects": [
+   {
+    "nome": "não tem mas procurar",
+    "linkedin": ""
+   }
+  ]
+ },
+ {
+  "id": 43,
+  "empresa": "Olimed Material Hospitalar",
+  "rua": "F",
+  "stand": "140",
+  "status": "sim",
+  "prospects": [
+   {
+    "nome": "Giane Furtado",
+    "linkedin": "https://www.linkedin.com/in/giane-furtado-adames-aa92b7145/"
+   }
+  ]
+ },
+ {
+  "id": 44,
+  "empresa": "JOAOMED",
+  "rua": "D",
+  "stand": "151",
+  "status": "sim",
+  "prospects": [
+   {
+    "nome": "não tem mas procurar",
+    "linkedin": ""
+   }
+  ]
+ },
+ {
+  "id": 45,
+  "empresa": "Sincron",
+  "rua": "E",
+  "stand": "90",
+  "status": "nao",
+  "prospects": []
+ },
+ {
+  "id": 46,
+  "empresa": "Medtronic",
+  "rua": "F",
+  "stand": "59",
+  "status": "sim",
+  "prospects": [
+   {
+    "nome": "Laureci Lopes",
+    "linkedin": "https://www.linkedin.com/in/laurecilopes/"
+   },
+   {
+    "nome": "Simone Seixas",
+    "linkedin": "https://www.linkedin.com/in/sseixas/"
+   }
+  ]
+ },
+ {
+  "id": 47,
+  "empresa": "Pilati",
+  "rua": "F",
+  "stand": "130",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 48,
+  "empresa": "GENESIS",
+  "rua": "A",
+  "stand": "23",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 49,
+  "empresa": "Baxter",
+  "rua": "E",
+  "stand": "31",
+  "status": "sim",
+  "prospects": [
+   {
+    "nome": "Mariana Telles",
+    "linkedin": ""
+   }
+  ]
+ },
+ {
+  "id": 50,
+  "empresa": "MACROSUL",
+  "rua": "C",
+  "stand": "91",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 51,
+  "empresa": "Xc Medico",
+  "rua": "H",
+  "stand": "109",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 52,
+  "empresa": "PHILIPS",
+  "rua": "E",
+  "stand": "11",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "André Duprat",
+    "linkedin": "https://www.linkedin.com/in/andreduprat/"
+   },
+   {
+    "nome": "Franco",
+    "linkedin": ""
+   }
+  ]
+ },
+ {
+  "id": 53,
+  "empresa": "FUTURE MEDICAL",
+  "rua": "D",
+  "stand": "81",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 54,
+  "empresa": "OTIMA",
+  "rua": "B",
+  "stand": "159",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 55,
+  "empresa": "CANON",
+  "rua": "C",
+  "stand": "41",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 56,
+  "empresa": "TEKA",
+  "rua": "G",
+  "stand": "71",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 57,
+  "empresa": "DANKIA",
+  "rua": "E",
+  "stand": "71",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 58,
+  "empresa": "INJEX",
+  "rua": "D",
+  "stand": "168",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 59,
+  "empresa": "PROTEC",
+  "rua": "C",
+  "stand": "21",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 60,
+  "empresa": "SISPACK",
+  "rua": "C",
+  "stand": "140",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Clarissa Lassala",
+    "linkedin": "https://www.linkedin.com/in/clarissa-lassala-6234139b/"
+   }
+  ]
+ },
+ {
+  "id": 61,
+  "empresa": "Grand Medical",
+  "rua": "C",
+  "stand": "205",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 62,
+  "empresa": "AM Medical",
+  "rua": "A",
+  "stand": "27",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 63,
+  "empresa": "Medmax",
+  "rua": "H",
+  "stand": "28",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 64,
+  "empresa": "Samtronic",
+  "rua": "G",
+  "stand": "10",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Diego Pavan",
+    "linkedin": "https://www.linkedin.com/in/diego-pavan-934ba764/"
+   }
+  ]
+ },
+ {
+  "id": 65,
+  "empresa": "CIRURGICA CERON",
+  "rua": "G",
+  "stand": "141",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 66,
+  "empresa": "INSTRAMED",
+  "rua": "D",
+  "stand": "39",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Denis Barbosa",
+    "linkedin": "https://www.linkedin.com/in/denis-barbosa/"
+   }
+  ]
+ },
+ {
+  "id": 67,
+  "empresa": "GE Healthcare",
+  "rua": "F",
+  "stand": "11",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 68,
+  "empresa": "CARDIOS",
+  "rua": "C",
+  "stand": "52",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Erica Chriguer",
+    "linkedin": "https://www.linkedin.com/in/ericachriguer/"
+   }
+  ]
+ },
+ {
+  "id": 69,
+  "empresa": "HEXAGON",
+  "rua": "B",
+  "stand": "101",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 70,
+  "empresa": "BIOTÉCNICA",
+  "rua": "J",
+  "stand": "40j",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 71,
+  "empresa": "Biotecno",
+  "rua": "J",
+  "stand": "13",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 72,
+  "empresa": "ALFA MED SISTEMAS MÉDICOS LTDA",
+  "rua": "G",
+  "stand": "40a",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 73,
+  "empresa": "Soluti",
+  "rua": "D",
+  "stand": "101",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Vinicius",
+    "linkedin": "https://www.linkedin.com/in/vinicius-sousa-b9382129/"
+   }
+  ]
+ },
+ {
+  "id": 74,
+  "empresa": "LIFEMED",
+  "rua": "E",
+  "stand": "68",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Fabio",
+    "linkedin": "https://www.linkedin.com/in/fabio-montico/"
+   },
+   {
+    "nome": "Franco",
+    "linkedin": "https://www.linkedin.com/in/francopallamolla/"
+   }
+  ]
+ },
+ {
+  "id": 75,
+  "empresa": "SHIMADZU DO BRASIL",
+  "rua": "F",
+  "stand": "79",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 76,
+  "empresa": "Acto",
+  "rua": "G",
+  "stand": "170b",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 77,
+  "empresa": "ATHOS BRASIL",
+  "rua": "K",
+  "stand": "50",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 78,
+  "empresa": "E-CARE MEDICAL",
+  "rua": "H",
+  "stand": "139",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 79,
+  "empresa": "DELLAMED,E-130 | E-140",
+  "rua": "",
+  "stand": "",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Felipe",
+    "linkedin": "https://www.linkedin.com/in/felipe-della-giustina-9050b17a/"
+   }
+  ]
+ },
+ {
+  "id": 80,
+  "empresa": "STERIS",
+  "rua": "F",
+  "stand": "21",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 81,
+  "empresa": "Stellantis",
+  "rua": "L",
+  "stand": "42",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 82,
+  "empresa": "MedLevensohn",
+  "rua": "G",
+  "stand": "151",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Fabio Cirillo",
+    "linkedin": "https://www.linkedin.com/in/fabio-cirillo-22060227/"
+   },
+   {
+    "nome": "Fernando Marinheiro",
+    "linkedin": "https://www.linkedin.com/in/fernando-marinheiro/"
+   }
+  ]
+ },
+ {
+  "id": 83,
+  "empresa": "SEBRAE PR",
+  "rua": "B",
+  "stand": "107",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 84,
+  "empresa": "HOSPCOM",
+  "rua": "I",
+  "stand": "18",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Rodolfo Pracanico",
+    "linkedin": "https://www.linkedin.com/in/rodolfo-pracanico-inacio/"
+   }
+  ]
+ },
+ {
+  "id": 85,
+  "empresa": "LEICA",
+  "rua": "B",
+  "stand": "68",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 86,
+  "empresa": "ZEISS",
+  "rua": "B",
+  "stand": "19",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 87,
+  "empresa": "LABINBRAZ,B-192  / Weiner",
+  "rua": "",
+  "stand": "",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Cesar Masini",
+    "linkedin": "https://www.linkedin.com/in/cesar-masini/"
+   }
+  ]
+ },
+ {
+  "id": 88,
+  "empresa": "MEDPEJ",
+  "rua": "F",
+  "stand": "50",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Vivian Rocha",
+    "linkedin": "https://www.linkedin.com/in/vivian-rocha-26b9bb279/"
+   }
+  ]
+ },
+ {
+  "id": 89,
+  "empresa": "HARTMANN",
+  "rua": "K",
+  "stand": "08",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 90,
+  "empresa": "CIVIAM BRASIL",
+  "rua": "C",
+  "stand": "69",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 91,
+  "empresa": "CARDINAL",
+  "rua": "D",
+  "stand": "49",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 92,
+  "empresa": "KONICA MINOLTA HEALTHCARE DO BRASIL",
+  "rua": "F",
+  "stand": "41",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Daniel Martins",
+    "linkedin": "https://www.linkedin.com/in/danielncmartins/"
+   }
+  ]
+ },
+ {
+  "id": 93,
+  "empresa": "Controller Comércio",
+  "rua": "G",
+  "stand": "121",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 94,
+  "empresa": "SC MEDICAL",
+  "rua": "E",
+  "stand": "60",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Tadeu Ferado",
+    "linkedin": "https://www.linkedin.com/in/tadeu-feraso-858667149/"
+   }
+  ]
+ },
+ {
+  "id": 95,
+  "empresa": "Suzuki",
+  "rua": "G",
+  "stand": "41",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 96,
+  "empresa": "MÓVEIS ANDRADE",
+  "rua": "A",
+  "stand": "50",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 97,
+  "empresa": "ECOMED COMÉRCIO DE PRODUTOS MÉDICOS LTDA",
+  "rua": "B",
+  "stand": "69",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Derek Flint",
+    "linkedin": "https://www.linkedin.com/in/derek-flinte-6687841a/"
+   }
+  ]
+ },
+ {
+  "id": 98,
+  "empresa": "POLYMED",
+  "rua": "B",
+  "stand": "149",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 99,
+  "empresa": "MINDRAY",
+  "rua": "D",
+  "stand": "11",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 100,
+  "empresa": "ESTERELIZA",
+  "rua": "C",
+  "stand": "151",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 101,
+  "empresa": "Ford Brasil",
+  "rua": "K",
+  "stand": "20",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 102,
+  "empresa": "LAYOUT MÓVEIS",
+  "rua": "G",
+  "stand": "88",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 103,
+  "empresa": "TKL BRASIL",
+  "rua": "C",
+  "stand": "149",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Gustavo Schultz",
+    "linkedin": "https://www.linkedin.com/in/gustavo-g-schultz-bb82ba40/"
+   }
+  ]
+ },
+ {
+  "id": 104,
+  "empresa": "LEISTUNG",
+  "rua": "G",
+  "stand": "18",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 105,
+  "empresa": "M2LIFE",
+  "rua": "D",
+  "stand": "178",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 106,
+  "empresa": "LAERDAL MEDICAL",
+  "rua": "D",
+  "stand": "120",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 107,
+  "empresa": "DRÄGER DO BRASIL",
+  "rua": "G",
+  "stand": "11",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 108,
+  "empresa": "ARJO",
+  "rua": "F",
+  "stand": "128",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 109,
+  "empresa": "SEBRAE MG",
+  "rua": "H",
+  "stand": "141",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 110,
+  "empresa": "ORTHO PAUHER",
+  "rua": "E",
+  "stand": "120",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 111,
+  "empresa": "Prolab",
+  "rua": "H",
+  "stand": "200",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 112,
+  "empresa": "DIVINO HOSPITALAR",
+  "rua": "G",
+  "stand": "104",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 113,
+  "empresa": "GIGANTE PRODUTOS MÉDICOS",
+  "rua": "B",
+  "stand": "46",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 114,
+  "empresa": "HANDLE",
+  "rua": "A",
+  "stand": "70",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 115,
+  "empresa": "Intermed",
+  "rua": "B",
+  "stand": "09",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 116,
+  "empresa": "SALUTEM HOSPITALARES",
+  "rua": "J",
+  "stand": "30",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 117,
+  "empresa": "HEALTH INDÚSTRIA",
+  "rua": "A",
+  "stand": "88",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 118,
+  "empresa": "MUCAMBO",
+  "rua": "E",
+  "stand": "205",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 119,
+  "empresa": "Strattner",
+  "rua": "F",
+  "stand": "29",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 120,
+  "empresa": "ECO DIAGNÓSTICA",
+  "rua": "D",
+  "stand": "144",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 121,
+  "empresa": "HEALTH CLEAN",
+  "rua": "F",
+  "stand": "119",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 122,
+  "empresa": "C-CORE INDÚSTRIA",
+  "rua": "G",
+  "stand": "58",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 123,
+  "empresa": "FORTEC,SEM STAND",
+  "rua": "",
+  "stand": "",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 124,
+  "empresa": "Stryker",
+  "rua": "G",
+  "stand": "31",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 125,
+  "empresa": "AGFA DO BRASIL",
+  "rua": "I",
+  "stand": "28",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 126,
+  "empresa": "Tec Mobile",
+  "rua": "A",
+  "stand": "113",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 127,
+  "empresa": "NIHON KOHDEN",
+  "rua": "E",
+  "stand": "48",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 128,
+  "empresa": "KLINGO",
+  "rua": "B",
+  "stand": "112",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 129,
+  "empresa": "GETINGE",
+  "rua": "E",
+  "stand": "21",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 130,
+  "empresa": "BARRFAB",
+  "rua": "G",
+  "stand": "39",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 131,
+  "empresa": "MACOM",
+  "rua": "E",
+  "stand": "171",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 132,
+  "empresa": "BHIO SUPPLY",
+  "rua": "C",
+  "stand": "51",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 133,
+  "empresa": "BIO ENGENHARIA",
+  "rua": "J",
+  "stand": "40g",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 134,
+  "empresa": "SANTALMAS",
+  "rua": "D",
+  "stand": "79",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 135,
+  "empresa": "LINET",
+  "rua": "D",
+  "stand": "41",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 136,
+  "empresa": "Unitec Hospitalar",
+  "rua": "C",
+  "stand": "44",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 137,
+  "empresa": "VENTCARE",
+  "rua": "A",
+  "stand": "58",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 138,
+  "empresa": "Via Medical",
+  "rua": "C",
+  "stand": "185",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 139,
+  "empresa": "KONIMAGEM",
+  "rua": "B",
+  "stand": "102",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 140,
+  "empresa": "BIO INFINITY",
+  "rua": "E",
+  "stand": "46",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 141,
+  "empresa": "OLIDEF",
+  "rua": "D",
+  "stand": "61",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 142,
+  "empresa": "Erbe",
+  "rua": "C",
+  "stand": "19",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 143,
+  "empresa": "LOCMED",
+  "rua": "E",
+  "stand": "69",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 144,
+  "empresa": "EBD BIOTECH",
+  "rua": "B",
+  "stand": "143",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 145,
+  "empresa": "Med Flex",
+  "rua": "B",
+  "stand": "65",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 146,
+  "empresa": "DANIALEX",
+  "rua": "D",
+  "stand": "180",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 147,
+  "empresa": "High-Tech",
+  "rua": "G",
+  "stand": "49",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 148,
+  "empresa": "SEBRAE RS",
+  "rua": "B",
+  "stand": "115",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 149,
+  "empresa": "MONTSERRAT",
+  "rua": "E",
+  "stand": "151",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 150,
+  "empresa": "DGS Brasil",
+  "rua": "D",
+  "stand": "88",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 151,
+  "empresa": "CONFIANCE MEDICAL",
+  "rua": "C",
+  "stand": "51",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 152,
+  "empresa": "MISSNER",
+  "rua": "E",
+  "stand": "191",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 153,
+  "empresa": "MAGNAMED",
+  "rua": "C",
+  "stand": "39",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 154,
+  "empresa": "CERAMED",
+  "rua": "H",
+  "stand": "210c",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 155,
+  "empresa": "D+ SAUDE VEICULOS ESPECIAIS LTDA",
+  "rua": "L",
+  "stand": "42",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 156,
+  "empresa": "FIRSTLAB",
+  "rua": "A",
+  "stand": "162",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 157,
+  "empresa": "MANDALA",
+  "rua": "A",
+  "stand": "56",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 158,
+  "empresa": "Maple Hospitalar",
+  "rua": "B",
+  "stand": "191",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 159,
+  "empresa": "MERCUR",
+  "rua": "E",
+  "stand": "161",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 160,
+  "empresa": "MED LIGHT",
+  "rua": "D",
+  "stand": "71",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 161,
+  "empresa": "TERUMO",
+  "rua": "G",
+  "stand": "62",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 162,
+  "empresa": "PHOENIX LUFERCO",
+  "rua": "B",
+  "stand": "29",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 163,
+  "empresa": "BIOCLIN",
+  "rua": "E",
+  "stand": "149a",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 164,
+  "empresa": "W&H Med",
+  "rua": "H",
+  "stand": "170a",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 165,
+  "empresa": "Ortosintese",
+  "rua": "E",
+  "stand": "61",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 166,
+  "empresa": "FUJIFILM DO BRASIL LTDA",
+  "rua": "J",
+  "stand": "65",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 167,
+  "empresa": "ANATOMIC",
+  "rua": "F",
+  "stand": "169",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 168,
+  "empresa": "CENTRAL FLEX",
+  "rua": "J",
+  "stand": "40d",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 169,
+  "empresa": "DORTE",
+  "rua": "G",
+  "stand": "166",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 170,
+  "empresa": "BD- BECTON DICKINSON",
+  "rua": "D",
+  "stand": "56",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 171,
+  "empresa": "OLSEN",
+  "rua": "C",
+  "stand": "188",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 172,
+  "empresa": "Perfetto",
+  "rua": "F",
+  "stand": "133",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 173,
+  "empresa": "RIVIO",
+  "rua": "A",
+  "stand": "104",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 174,
+  "empresa": "CM COMANDOS",
+  "rua": "E",
+  "stand": "79",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 175,
+  "empresa": "HORTRON PRODUTOS MEDICOS",
+  "rua": "C",
+  "stand": "171",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 176,
+  "empresa": "KARL STORZ",
+  "rua": "G",
+  "stand": "61",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 177,
+  "empresa": "MUNDI REPRESENTAÇÕES",
+  "rua": "J",
+  "stand": "10",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 178,
+  "empresa": "Micromar",
+  "rua": "F",
+  "stand": "185",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 179,
+  "empresa": "Microma",
+  "rua": "G",
+  "stand": "169h",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 180,
+  "empresa": "SABIE",
+  "rua": "D",
+  "stand": "201",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 181,
+  "empresa": "TOTVS",
+  "rua": "D",
+  "stand": "110",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 182,
+  "empresa": "LABORMED",
+  "rua": "A",
+  "stand": "67",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 183,
+  "empresa": "MP MATERIAIS HOSPITALARES",
+  "rua": "C",
+  "stand": "147",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 184,
+  "empresa": "Doutores da Alegria",
+  "rua": "L",
+  "stand": "39",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 185,
+  "empresa": "Vital C",
+  "rua": "A",
+  "stand": "84",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 186,
+  "empresa": "Live! Healthcare Supplies",
+  "rua": "D",
+  "stand": "147",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 187,
+  "empresa": "COMEN",
+  "rua": "E",
+  "stand": "29",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 188,
+  "empresa": "Freedom Veículos Elétricos LTDA",
+  "rua": "E",
+  "stand": "118",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 189,
+  "empresa": "LIVANOVA",
+  "rua": "J",
+  "stand": "12",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 190,
+  "empresa": "Russer Brasil",
+  "rua": "B",
+  "stand": "41",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 191,
+  "empresa": "LABNEWS",
+  "rua": "C",
+  "stand": "125",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 192,
+  "empresa": "SISNACMED",
+  "rua": "E",
+  "stand": "19",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 193,
+  "empresa": "DESCARPACK",
+  "rua": "F",
+  "stand": "171",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Conrado Araujo",
+    "linkedin": "https://www.linkedin.com/in/conradoaraujo/"
+   }
+  ]
+ },
+ {
+  "id": 194,
+  "empresa": "BAVARIA",
+  "rua": "G",
+  "stand": "170",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 195,
+  "empresa": "Saúde One Sistemas",
+  "rua": "B",
+  "stand": "118",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Adriano Marques",
+    "linkedin": "https://www.linkedin.com/in/adrianomarques/"
+   }
+  ]
+ },
+ {
+  "id": 196,
+  "empresa": "CARDIOVENT COMERCIO E SERVICOS LTDA",
+  "rua": "H",
+  "stand": "30",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Gilberto Alfredo",
+    "linkedin": "https://www.linkedin.com/in/gilberto-alfredo-0516a74/"
+   }
+  ]
+ },
+ {
+  "id": 197,
+  "empresa": "FBAH",
+  "rua": "I",
+  "stand": "03",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 198,
+  "empresa": "DB DIAGNÓSTICOS",
+  "rua": "C",
+  "stand": "141",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Leandro Dattoli",
+    "linkedin": "https://www.linkedin.com/in/leandro-dattoli/"
+   },
+   {
+    "nome": "Tobias Thabet",
+    "linkedin": "https://www.linkedin.com/in/tobias-thabet-martins-a80b78142/"
+   }
+  ]
+ },
+ {
+  "id": 199,
+  "empresa": "VALMIG",
+  "rua": "H",
+  "stand": "08",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Leonardo Perin",
+    "linkedin": "https://www.linkedin.com/in/leonardo-perin-de-oliveira-99712174/"
+   }
+  ]
+ },
+ {
+  "id": 200,
+  "empresa": "Unikon",
+  "rua": "C",
+  "stand": "210",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 201,
+  "empresa": "PANAMEDICAL",
+  "rua": "C",
+  "stand": "78",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Horacio Ogata",
+    "linkedin": "https://www.linkedin.com/in/horacio-ogata-b213141b/"
+   }
+  ]
+ },
+ {
+  "id": 202,
+  "empresa": "BORLA",
+  "rua": "D",
+  "stand": "191",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 203,
+  "empresa": "ORTHOTRAUMA",
+  "rua": "J",
+  "stand": "40a",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 204,
+  "empresa": "OQTIS",
+  "rua": "B",
+  "stand": "37",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 205,
+  "empresa": "BTL BRASIL",
+  "rua": "G",
+  "stand": "145",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 206,
+  "empresa": "Dixmedical",
+  "rua": "F",
+  "stand": "64",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 207,
+  "empresa": "SIUI",
+  "rua": "G",
+  "stand": "54",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 208,
+  "empresa": "SL INSTRUMENTOS",
+  "rua": "G",
+  "stand": "158",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 209,
+  "empresa": "OPUS MEDICAL",
+  "rua": "G",
+  "stand": "50",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 210,
+  "empresa": "First Medical Service",
+  "rua": "G",
+  "stand": "38",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 211,
+  "empresa": "Nilko Armários",
+  "rua": "G",
+  "stand": "70",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 212,
+  "empresa": "NORA ALIMENTOS",
+  "rua": "G",
+  "stand": "110",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 213,
+  "empresa": "Topema",
+  "rua": "F",
+  "stand": "90",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 214,
+  "empresa": "Pixeon",
+  "rua": "E",
+  "stand": "91",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 215,
+  "empresa": "MH LAB",
+  "rua": "C",
+  "stand": "121",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 216,
+  "empresa": "TECME DO BRASIL",
+  "rua": "H",
+  "stand": "22",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Vanessa Gomes",
+    "linkedin": "https://www.linkedin.com/in/vanessa-gomes-gestora-comercial-saude/"
+   }
+  ]
+ },
+ {
+  "id": 217,
+  "empresa": "Inova Technology",
+  "rua": "G",
+  "stand": "169c",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 218,
+  "empresa": "MTEX",
+  "rua": "H",
+  "stand": "180a",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 219,
+  "empresa": "RAZEK",
+  "rua": "E",
+  "stand": "179",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 220,
+  "empresa": "Global Medical",
+  "rua": "H",
+  "stand": "54",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 221,
+  "empresa": "BK HOSPITALAR",
+  "rua": "H",
+  "stand": "49",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 222,
+  "empresa": "PCI GASES DO BRASIL",
+  "rua": "D",
+  "stand": "68",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 223,
+  "empresa": "TS SHARA",
+  "rua": "K",
+  "stand": "60",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 224,
+  "empresa": "MEGA PLÁSTICOS",
+  "rua": "D",
+  "stand": "198",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 225,
+  "empresa": "Instituto ACQUA",
+  "rua": "A",
+  "stand": "25",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 226,
+  "empresa": "PANMEDICA NEGOCIOS HOSPITALARES LTDA",
+  "rua": "B",
+  "stand": "70",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 227,
+  "empresa": "PHELCOM",
+  "rua": "A",
+  "stand": "127",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Jose Syuchi",
+    "linkedin": "https://www.linkedin.com/in/josestuchi/"
+   }
+  ]
+ },
+ {
+  "id": 228,
+  "empresa": "SAPI MED",
+  "rua": "D",
+  "stand": "280",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 229,
+  "empresa": "SPINE IMPLANTES",
+  "rua": "J",
+  "stand": "40m",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 230,
+  "empresa": "VALLITECH",
+  "rua": "F",
+  "stand": "51",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Ricardo Cristian",
+    "linkedin": "https://www.linkedin.com/in/ricardocfmarques/"
+   }
+  ]
+ },
+ {
+  "id": 231,
+  "empresa": "Special Gases do Brasil",
+  "rua": "D",
+  "stand": "47",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 232,
+  "empresa": "DIMEX",
+  "rua": "G",
+  "stand": "220a",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 233,
+  "empresa": "Pé sem dor",
+  "rua": "H",
+  "stand": "125",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 234,
+  "empresa": "Trimed",
+  "rua": "B",
+  "stand": "181",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 235,
+  "empresa": "Delfar Produtos Médicos",
+  "rua": "C",
+  "stand": "181",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 236,
+  "empresa": "Uniqmed",
+  "rua": "D",
+  "stand": "171",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 237,
+  "empresa": "Doc Tools",
+  "rua": "H",
+  "stand": "149",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 238,
+  "empresa": "UTAS",
+  "rua": "A",
+  "stand": "67a",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 239,
+  "empresa": "CRISTÓFOLI BIOSSEGURANÇA",
+  "rua": "F",
+  "stand": "61",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 240,
+  "empresa": "Airo PVC",
+  "rua": "H",
+  "stand": "104",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 241,
+  "empresa": "ABRAMED",
+  "rua": "B",
+  "stand": "137",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 242,
+  "empresa": "Core Technology",
+  "rua": "C",
+  "stand": "56",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 243,
+  "empresa": "MANTOVA",
+  "rua": "J",
+  "stand": "40b",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 244,
+  "empresa": "Animati 2",
+  "rua": "E",
+  "stand": "119",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Jean Carlo Albiero",
+    "linkedin": ""
+   }
+  ]
+ },
+ {
+  "id": 245,
+  "empresa": "IBRAMED",
+  "rua": "D",
+  "stand": "130",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Daniel Marques",
+    "linkedin": "https://www.linkedin.com/in/daniel-marques-62898714a/"
+   }
+  ]
+ },
+ {
+  "id": 246,
+  "empresa": "INTCO MEDICAL",
+  "rua": "E",
+  "stand": "198",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 247,
+  "empresa": "MEDhCIR",
+  "rua": "A",
+  "stand": "31",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 248,
+  "empresa": "Oxymed",
+  "rua": "D",
+  "stand": "50",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Paulo",
+    "linkedin": "https://www.linkedin.com/in/phmolinari/"
+   }
+  ]
+ },
+ {
+  "id": 249,
+  "empresa": "Planisa",
+  "rua": "C",
+  "stand": "110",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Agostini",
+    "linkedin": "https://www.linkedin.com/in/agostini-eduardo-luiz-5353b092/"
+   }
+  ]
+ },
+ {
+  "id": 250,
+  "empresa": "BIOTEK",
+  "rua": "C",
+  "stand": "206",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 251,
+  "empresa": "BUSINESS FRANCE",
+  "rua": "G",
+  "stand": "202",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 252,
+  "empresa": "BIOCON",
+  "rua": "C",
+  "stand": "139",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Louise Viana",
+    "linkedin": "https://www.linkedin.com/in/louise-viana-magalhaes/"
+   }
+  ]
+ },
+ {
+  "id": 253,
+  "empresa": "BIOSAT",
+  "rua": "H",
+  "stand": "59",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 254,
+  "empresa": "ENDOBRAX",
+  "rua": "C",
+  "stand": "50",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Robson Santos",
+    "linkedin": "https://www.linkedin.com/in/robson-santos-ab274931/"
+   }
+  ]
+ },
+ {
+  "id": 255,
+  "empresa": "Quinelato",
+  "rua": "C",
+  "stand": "200",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 256,
+  "empresa": "TTS DO BRASIL LTDA,SEM STAND",
+  "rua": "",
+  "stand": "",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 257,
+  "empresa": "CMOS DRAKE SA,SEM STAND",
+  "rua": "",
+  "stand": "",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 258,
+  "empresa": "OXINAL",
+  "rua": "A",
+  "stand": "21",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 259,
+  "empresa": "SIEMENS HEALTHINEERS",
+  "rua": "G",
+  "stand": "19",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 260,
+  "empresa": "BIOMASS BRASIL",
+  "rua": "C",
+  "stand": "168",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 261,
+  "empresa": "BRAINLAB",
+  "rua": "D",
+  "stand": "59",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 262,
+  "empresa": "WN Hospitalar",
+  "rua": "D",
+  "stand": "186",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 263,
+  "empresa": "Cimtech",
+  "rua": "B",
+  "stand": "154",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 264,
+  "empresa": "Global Tec Indústria e Comercio de Equipamentos Médicos Ltda",
+  "rua": "G",
+  "stand": "48",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 265,
+  "empresa": "GS1 BRASIL",
+  "rua": "C",
+  "stand": "117",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 266,
+  "empresa": "ONA - ORGANIZAÇÃO NACIONAL DE ACREDITAÇÃO",
+  "rua": "I",
+  "stand": "76a",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 267,
+  "empresa": "VHMED",
+  "rua": "G",
+  "stand": "65",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 268,
+  "empresa": "Rhosse Instrumentos e Equipamentos Cirúrgicos",
+  "rua": "E",
+  "stand": "49",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 269,
+  "empresa": "CLEAN MEDICAL",
+  "rua": "C",
+  "stand": "28",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Lucas Meneguetti",
+    "linkedin": "https://www.linkedin.com/in/lucasmeneguetti/"
+   }
+  ]
+ },
+ {
+  "id": 270,
+  "empresa": "CRALPLAST",
+  "rua": "C",
+  "stand": "130",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Rony Cecconello",
+    "linkedin": "https://www.linkedin.com/in/rony-cecconello-629638a8/"
+   }
+  ]
+ },
+ {
+  "id": 271,
+  "empresa": "DINATEC",
+  "rua": "L",
+  "stand": "14",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 272,
+  "empresa": "NOXTEC",
+  "rua": "E",
+  "stand": "89",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Breno Leal",
+    "linkedin": "https://www.linkedin.com/in/breno-leal-427a453a/"
+   },
+   {
+    "nome": "Robson Ctão",
+    "linkedin": ""
+   }
+  ]
+ },
+ {
+  "id": 273,
+  "empresa": "Soft Aid,B-178 | EX.02",
+  "rua": "",
+  "stand": "",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 274,
+  "empresa": "TÜV RHEINLAND",
+  "rua": "C",
+  "stand": "79",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 275,
+  "empresa": "Biocare",
+  "rua": "A",
+  "stand": "37",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 276,
+  "empresa": "Biosensor",
+  "rua": "F",
+  "stand": "90",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 277,
+  "empresa": "Bistos",
+  "rua": "A",
+  "stand": "62",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 278,
+  "empresa": "iCelera",
+  "rua": "B",
+  "stand": "73",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Wilson Renato",
+    "linkedin": "https://www.linkedin.com/in/wilson-renato-francisco-90b2268/"
+   }
+  ]
+ },
+ {
+  "id": 279,
+  "empresa": "KL BRASIL",
+  "rua": "C",
+  "stand": "89",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Israel Valetin",
+    "linkedin": "https://www.linkedin.com/in/israel-valentim-087424102/"
+   }
+  ]
+ },
+ {
+  "id": 280,
+  "empresa": "KONEX INDÚSTRIA E COMÉRCIO LTDA",
+  "rua": "K",
+  "stand": "37",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Luiz Mucciolo",
+    "linkedin": "https://www.linkedin.com/in/luiz-mucciolo-b876087/"
+   }
+  ]
+ },
+ {
+  "id": 281,
+  "empresa": "PERFIL Assessoria Contábil",
+  "rua": "F",
+  "stand": "202",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 282,
+  "empresa": "POSKOM",
+  "rua": "G",
+  "stand": "180c",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 283,
+  "empresa": "Bralimpia Equipamentos",
+  "rua": "F",
+  "stand": "100",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 284,
+  "empresa": "SPDATA",
+  "rua": "D",
+  "stand": "108",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 285,
+  "empresa": "Toth Lifecare",
+  "rua": "F",
+  "stand": "58",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 286,
+  "empresa": "ANAHP",
+  "rua": "I",
+  "stand": "36",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 287,
+  "empresa": "MF INSTRUMENTAL",
+  "rua": "E",
+  "stand": "193a",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Marcelo Correia",
+    "linkedin": "https://www.linkedin.com/in/marcelo-correia-b0550831a/"
+   }
+  ]
+ },
+ {
+  "id": 288,
+  "empresa": "OMRON",
+  "rua": "B",
+  "stand": "195",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 289,
+  "empresa": "ABIMED",
+  "rua": "H",
+  "stand": "32",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 290,
+  "empresa": "MADU MOBILIÁRIO TÉCNICO LTDA,SEM STAND",
+  "rua": "",
+  "stand": "",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 291,
+  "empresa": "7import Medical Group",
+  "rua": "B",
+  "stand": "31",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 292,
+  "empresa": "ARKMEDS",
+  "rua": "D",
+  "stand": "119",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 293,
+  "empresa": "CMR SURGICAL",
+  "rua": "F",
+  "stand": "56",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 294,
+  "empresa": "ABDEH",
+  "rua": "H",
+  "stand": "96",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 295,
+  "empresa": "AG SUS",
+  "rua": "I",
+  "stand": "05",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 296,
+  "empresa": "BOWA MEDICAL",
+  "rua": "B",
+  "stand": "11",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Ronaldo Oliveira",
+    "linkedin": "https://www.linkedin.com/in/ronaldo-oliveira-941a6919/"
+   }
+  ]
+ },
+ {
+  "id": 297,
+  "empresa": "COSMODERMA INDÚSTRIA",
+  "rua": "B",
+  "stand": "202",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 298,
+  "empresa": "IOL IMPLANTES,SEM STAND",
+  "rua": "",
+  "stand": "",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 299,
+  "empresa": "MRC HOSPITALAR",
+  "rua": "B",
+  "stand": "196",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 300,
+  "empresa": "Rufino Ortopedia",
+  "rua": "B",
+  "stand": "161",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 301,
+  "empresa": "TANIS TECNOLOGIA",
+  "rua": "F",
+  "stand": "198",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 302,
+  "empresa": "TEB Tecnologia Eletrônica Brasileira Ltda",
+  "rua": "B",
+  "stand": "78",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 303,
+  "empresa": "BIONEXO",
+  "rua": "D",
+  "stand": "105",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 304,
+  "empresa": "BIG FISH",
+  "rua": "F",
+  "stand": "189",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 305,
+  "empresa": "Grupo Condor",
+  "rua": "D",
+  "stand": "57",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 306,
+  "empresa": "Latini Group",
+  "rua": "D",
+  "stand": "211",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 307,
+  "empresa": "Multitone",
+  "rua": "E",
+  "stand": "111",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 308,
+  "empresa": "Power Lite",
+  "rua": "E",
+  "stand": "131",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 309,
+  "empresa": "UNICRED",
+  "rua": "I",
+  "stand": "32",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 310,
+  "empresa": "Beyond",
+  "rua": "E",
+  "stand": "51",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 311,
+  "empresa": "ECLIN",
+  "rua": "G",
+  "stand": "38",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 312,
+  "empresa": "LUMED",
+  "rua": "D",
+  "stand": "280a",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 313,
+  "empresa": "NEOLASER",
+  "rua": "B",
+  "stand": "166",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 314,
+  "empresa": "Shunmei Medical Co ltd,SEM STAND",
+  "rua": "",
+  "stand": "",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 315,
+  "empresa": "TV DOUTOR",
+  "rua": "I",
+  "stand": "26",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 316,
+  "empresa": "SALUX",
+  "rua": "D",
+  "stand": "109",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 317,
+  "empresa": "HAOXI Equipamentos Médicos Hospitalares",
+  "rua": "J",
+  "stand": "20",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 318,
+  "empresa": "Meheco do Brasil",
+  "rua": "D",
+  "stand": "208",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 319,
+  "empresa": "Anadona Descartáveis para a Saúde",
+  "rua": "F",
+  "stand": "161",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 320,
+  "empresa": "Grupo Guará",
+  "rua": "F",
+  "stand": "69",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 321,
+  "empresa": "Medicalfix",
+  "rua": "G",
+  "stand": "130",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 322,
+  "empresa": "SICOOB CREDICOM",
+  "rua": "H",
+  "stand": "24",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 323,
+  "empresa": "TAKE CARE",
+  "rua": "F",
+  "stand": "141",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 324,
+  "empresa": "VENOSAN",
+  "rua": "E",
+  "stand": "141",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 325,
+  "empresa": "ALIVE HEART",
+  "rua": "D",
+  "stand": "179",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 326,
+  "empresa": "Diferencial Tributária",
+  "rua": "H",
+  "stand": "30",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 327,
+  "empresa": "grafMED",
+  "rua": "C",
+  "stand": "119",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 328,
+  "empresa": "GST CORP",
+  "rua": "A",
+  "stand": "119",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 329,
+  "empresa": "HPBIO",
+  "rua": "F",
+  "stand": "58",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 330,
+  "empresa": "MAGIC MEDIC",
+  "rua": "G",
+  "stand": "128",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 331,
+  "empresa": "Marconi Souto",
+  "rua": "G",
+  "stand": "108",
+  "status": "nao",
+  "prospects": []
+ },
+ {
+  "id": 332,
+  "empresa": "MS TECNOLOGIA EM RADIOLOGIA",
+  "rua": "A",
+  "stand": "116",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 333,
+  "empresa": "NOVA BIOMEDICAL BRASIL",
+  "rua": "B",
+  "stand": "138",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 334,
+  "empresa": "Nutromni Serviços de Nutrição",
+  "rua": "H",
+  "stand": "110",
+  "status": "sim",
+  "prospects": [
+   {
+    "nome": "Ricardo Oliveira",
+    "linkedin": "https://www.linkedin.com/in/ricardo-oliveira-7558482a/"
+   }
+  ]
+ },
+ {
+  "id": 335,
+  "empresa": "Prointec",
+  "rua": "L",
+  "stand": "44",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 336,
+  "empresa": "PROM ARGENTINA",
+  "rua": "G",
+  "stand": "220",
+  "status": "intern",
+  "prospects": []
+ },
+ {
+  "id": 337,
+  "empresa": "Taimin",
+  "rua": "A",
+  "stand": "24",
+  "status": "sim",
+  "prospects": [
+   {
+    "nome": "Camilla Augusto",
+    "linkedin": ""
+   }
+  ]
+ },
+ {
+  "id": 338,
+  "empresa": "OXY CÂMARAS",
+  "rua": "E",
+  "stand": "70",
+  "status": "sim",
+  "prospects": [
+   {
+    "nome": "Patrícia Siqueira",
+    "linkedin": "https://www.linkedin.com/in/patr%C3%ADcia-siqueira-vancsek-7a5b09aa/"
+   }
+  ]
+ },
+ {
+  "id": 339,
+  "empresa": "Abimo,J-40 | K-56",
+  "rua": "",
+  "stand": "",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 340,
+  "empresa": "Medix Brasil",
+  "rua": "E",
+  "stand": "180",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 341,
+  "empresa": "Belgotex do Brasil",
+  "rua": "G",
+  "stand": "103",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 342,
+  "empresa": "BSZ Cirúrgica",
+  "rua": "C",
+  "stand": "179",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 343,
+  "empresa": "Duosystem",
+  "rua": "D",
+  "stand": "89",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 344,
+  "empresa": "FAMI Tecnologia Médica",
+  "rua": "J",
+  "stand": "14",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Daniel",
+    "linkedin": "https://www.linkedin.com/in/daniel-armentano/"
+   },
+   {
+    "nome": "Alexandre",
+    "linkedin": "https://www.linkedin.com/in/alexandre-nardi-bb196233/"
+   }
+  ]
+ },
+ {
+  "id": 345,
+  "empresa": "GLOBALTHINGS",
+  "rua": "C",
+  "stand": "80",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 346,
+  "empresa": "GRUPO LEMOS & ANDRADE",
+  "rua": "C",
+  "stand": "169",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 347,
+  "empresa": "GVS DO BRASIL LTDA",
+  "rua": "C",
+  "stand": "189",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Carlos",
+    "linkedin": "https://www.linkedin.com/in/carlos-henrique-alvarez-6419709/"
+   }
+  ]
+ },
+ {
+  "id": 348,
+  "empresa": "IMPOL",
+  "rua": "D",
+  "stand": "159",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 349,
+  "empresa": "Mamute Equipamentos",
+  "rua": "G",
+  "stand": "59",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 350,
+  "empresa": "Maxicor Produtos Médicos",
+  "rua": "E",
+  "stand": "189",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Hamilton",
+    "linkedin": "https://www.linkedin.com/company/maxicor-produtos-medicos/people/"
+   }
+  ]
+ },
+ {
+  "id": 351,
+  "empresa": "MSC MED",
+  "rua": "D",
+  "stand": "199",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 352,
+  "empresa": "NIAZI CHOHFI",
+  "rua": "G",
+  "stand": "96",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 353,
+  "empresa": "OSTEOMED",
+  "rua": "D",
+  "stand": "161",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Nidersani",
+    "linkedin": "https://www.linkedin.com/in/nidersani-ragonha-123b24111/"
+   }
+  ]
+ },
+ {
+  "id": 354,
+  "empresa": "RICHARD WOLF",
+  "rua": "H",
+  "stand": "38",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 355,
+  "empresa": "RWR EQUIPAMENTOS HOSPITALARES",
+  "rua": "D",
+  "stand": "29",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 356,
+  "empresa": "SDORF SCIENTIFIC",
+  "rua": "D",
+  "stand": "181",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 357,
+  "empresa": "SUPERMEDY",
+  "rua": "E",
+  "stand": "121",
+  "status": "",
+  "prospects": [
+   {
+    "nome": "Albert K",
+    "linkedin": "https://www.linkedin.com/company/supermedy-imp-exp/people/?keywords=diretor"
+   }
+  ]
+ },
+ {
+  "id": 358,
+  "empresa": "UNITED MEDICAL INC",
+  "rua": "D",
+  "stand": "82",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 359,
+  "empresa": "ALPHA AI",
+  "rua": "H",
+  "stand": "190a",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 360,
+  "empresa": "ATRASORB",
+  "rua": "J",
+  "stand": "40e",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 361,
+  "empresa": "ATS MEDICAL",
+  "rua": "H",
+  "stand": "145",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 362,
+  "empresa": "Aygun",
+  "rua": "J",
+  "stand": "38",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 363,
+  "empresa": "BIOMETAL",
+  "rua": "H",
+  "stand": "161",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 364,
+  "empresa": "ELOMED",
+  "rua": "A",
+  "stand": "66",
+  "status": "sim",
+  "prospects": []
+ },
+ {
+  "id": 365,
+  "empresa": "FISHER & PAYKEL HEALTHCARE",
+  "rua": "C",
+  "stand": "49",
+  "status": "sim",
+  "prospects": [
+   {
+    "nome": "Claudia Selestrin",
+    "linkedin": "https://www.linkedin.com/in/claudia-selestrin/"
+   }
+  ]
+ },
+ {
+  "id": 366,
+  "empresa": "Innovex",
+  "rua": "G",
+  "stand": "163",
+  "status": "intern",
+  "prospects": []
+ },
+ {
+  "id": 367,
+  "empresa": "Kinetic",
+  "rua": "G",
+  "stand": "320h",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 368,
+  "empresa": "RF MEDICAL",
+  "rua": "G",
+  "stand": "180e",
+  "status": "intern",
+  "prospects": []
+ },
+ {
+  "id": 369,
+  "empresa": "SCiTec",
+  "rua": "D",
+  "stand": "199",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 370,
+  "empresa": "SEPLOU Medical",
+  "rua": "H",
+  "stand": "117",
+  "status": "nao",
+  "prospects": []
+ },
+ {
+  "id": 371,
+  "empresa": "SHMEDIC",
+  "rua": "F",
+  "stand": "114",
+  "status": "nao",
+  "prospects": []
+ },
+ {
+  "id": 372,
+  "empresa": "SICFLUX",
+  "rua": "A",
+  "stand": "35",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 373,
+  "empresa": "Terra nova Logística LTDA",
+  "rua": "H",
+  "stand": "68",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 374,
+  "empresa": "TWB Plásticos",
+  "rua": "G",
+  "stand": "100",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 375,
+  "empresa": "WELL LEAD MEDICAL CO LTD,SEM STAND",
+  "rua": "",
+  "stand": "",
+  "status": "",
+  "prospects": []
+ },
+ {
+  "id": 376,
+  "empresa": "WELLON",
+  "rua": "B",
+  "stand": "112",
+  "status": "",
+  "prospects": []
+ }
+]
