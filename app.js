@@ -64,10 +64,13 @@ function populateRuas() {
 
 async function updateCounter() {
   const visitas = await db.getAllVisitas();
+  const visMap = Object.fromEntries(visitas.map(v => [v.empresa_id, v]));
+  const prio = empresas.filter(e => e.status === 'sim').length;
+  const prioFeitas = empresas.filter(e => e.status === 'sim' && visMap[e.id]?.status === 'feita').length;
   const feitas = visitas.filter(v => v.status === 'feita').length;
   const voltar = visitas.filter(v => v.status === 'voltar').length;
   document.getElementById('counter').textContent =
-    `${empresas.length} empresas · ${feitas} feitas · ${voltar} voltar`;
+    `${prioFeitas}/${prio} prio · ${feitas} feitas · ${voltar} voltar`;
 }
 
 // ------- LIST VIEW -------
@@ -1011,6 +1014,8 @@ function setView(viewId) {
   if (viewId === 'agenda-view') renderAgenda();
   if (viewId === 'extras-view') renderExtrasForm();
   if (viewId === 'export-view') { renderExportStats(); updateSyncLabel(); }
+  // Counter sempre atualizado em troca de view
+  updateCounter();
 }
 
 // ------- SYNC GOOGLE SHEETS -------

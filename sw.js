@@ -1,4 +1,4 @@
-const CACHE = 'hospitalar-v5';
+const CACHE = 'hospitalar-v6';
 const ASSETS = [
   './',
   './index.html',
