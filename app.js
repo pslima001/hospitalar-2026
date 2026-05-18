@@ -903,7 +903,8 @@ async function buildZip() {
   if (extras.length) {
     const ef = zip.folder('camiseta');
     for (const x of extras) {
-      const fname = `${x.dia||'sem-dia'}_${x.hora||'??'}_${safeName(x.nome||'sem-nome')}.txt`;
+      const horaSafe = (x.hora||'??').replace(':','h');
+      const fname = `${x.dia||'sem-dia'}_${horaSafe}_${safeName(x.nome||'sem-nome')}.txt`;
       ef.file(fname, [
         `NOME: ${x.nome||''}`,
         `TELEFONE: ${x.telefone||''}`,
