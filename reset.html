@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reset - Hospitalar</title>
+<style>
+body { font-family: -apple-system, sans-serif; padding: 24px; max-width: 480px; margin: 0 auto;
+       background: #f6f7fa; color: #1a1a1a; }
+h1 { color: #0a4d8c; }
+.status { background: #fff; padding: 16px; border-radius: 8px; margin: 12px 0;
+          border-left: 4px solid #14a085; font-family: monospace; font-size: 14px; }
+.done { border-color: #16a34a; }
+.error { border-color: #dc2626; }
+a.btn { display: block; background: #0a4d8c; color: #fff; padding: 14px; border-radius: 8px;
+        text-align: center; text-decoration: none; margin-top: 16px; font-weight: 600; }
+</style>
+</head>
+<body>
+<h1>🧹 Forçando atualização…</h1>
+<div id="log"></div>
+<p id="next" style="display:none">
+  <strong>Pronto!</strong> Suas visitas ficam salvas — apenas o cache do app foi limpo.
+</p>
+<a id="goto" class="btn" href="./" style="display:none">Abrir app novo</a>
+
+<script>
+const log = document.getElementById('log');
+function add(msg, cls='status') {
+  const d = document.createElement('div');
+  d.className = cls; d.textContent = msg;
+  log.appendChild(d);
+}
+
+(async () => {
+  try {
+    // 1) Desinstala todos os Service Workers
+    if ('serviceWorker' in navigator) {
+      const regs = await navigator.serviceWorker.getRegistrations();
+      for (const r of regs) await r.unregister();
+      add(`✓ ${regs.length} Service Worker(s) removido(s)`, 'status done');
+    }
+    // 2) Limpa todos os caches
+    if ('caches' in window) {
+      const keys = await caches.keys();
+      for (const k of keys) await caches.delete(k);
+      add(`✓ ${keys.length} cache(s) removido(s)`, 'status done');
+    }
+    add('✓ App pronto para recarregar', 'status done');
+    document.getElementById('next').style.display = 'block';
+    const goto = document.getElementById('goto');
+    goto.style.display = 'block';
+    // Auto-redireciona em 3s
+    setTimeout(() => { window.location.href = './?fresh=' + Date.now(); }, 3000);
+  } catch (e) {
+    add('Erro: ' + e.message, 'status error');
+  }
+})();
+</script>
+</body>
+</html>
