@@ -952,28 +952,45 @@ async function exportZipDownload() {
 
 async function exportShareDrive() {
   const btn = document.getElementById('btn-export-share');
-  btn.disabled = true; const orig = btn.textContent; btn.textContent = 'Gerando ZIP…';
+  btn.disabled = true;
+  const orig = btn.textContent;
+  btn.textContent = 'Gerando ZIP…';
+  let blob, filename, file;
   try {
-    const { blob, filename } = await buildZip();
-    const file = new File([blob], filename, { type: 'application/zip' });
-    // Tenta share API com arquivo
-    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+    const r = await buildZip();
+    blob = r.blob; filename = r.filename;
+    file = new File([blob], filename, { type: 'application/zip' });
+  } catch (e) {
+    alert('Erro ao gerar ZIP: ' + e.message);
+    btn.disabled = false; btn.textContent = orig;
+    return;
+  }
+  // Tenta share. Se falhar (user gesture expirou, denied, sem suporte), baixa.
+  let shared = false;
+  if (navigator.canShare && navigator.canShare({ files: [file] })) {
+    btn.textContent = 'Abrindo menu compartilhar…';
+    try {
       await navigator.share({
         files: [file],
         title: 'Hospitalar 2026 — Export',
-        text: `Visitas registradas na Feira Hospitalar 2026 (${new Date().toLocaleDateString('pt-BR')})`
       });
+      shared = true;
       showToast('Compartilhado');
-    } else {
-      // Fallback: download
-      download(filename, blob);
-      alert('Seu navegador não suporta compartilhar arquivo direto. Baixei o ZIP — abra o Drive e faça upload manual.');
+    } catch (e) {
+      if (e.name === 'AbortError') {
+        // Usuário cancelou — não baixa
+        btn.disabled = false; btn.textContent = orig;
+        return;
+      }
+      // NotAllowedError / permission denied / outros: vai pro fallback
+      console.warn('Share falhou, baixando ZIP:', e);
     }
-  } catch (e) {
-    if (e.name !== 'AbortError') alert('Erro: ' + e.message);
-  } finally {
-    btn.disabled = false; btn.textContent = orig;
   }
+  if (!shared) {
+    download(filename, blob);
+    showToast('Baixado. Abra Downloads e compartilhe com o Drive.');
+  }
+  btn.disabled = false; btn.textContent = orig;
 }
 
 function toCSV(rows) {
