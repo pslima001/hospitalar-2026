@@ -213,6 +213,17 @@ async function openDetail(id) {
     <div class="detail-body">
 
       <section class="card">
+        <h3 style="margin-top:0">Classificação</h3>
+        <div class="radio-group radio-grid" id="rg-emp-status">
+          <label data-val="sim"><span>Prioridade</span></label>
+          <label data-val="provavel"><span>Provável</span></label>
+          <label data-val="intern"><span>Intern</span></label>
+          <label data-val="nao"><span>Não visitar</span></label>
+          <label data-val=""><span>Sem status</span></label>
+        </div>
+      </section>
+
+      <section class="card">
         <h3 style="margin-top:0">Prospects</h3>
         ${prospectsHtml}
         <button class="btn small" id="btn-add-prospect">+ Adicionar prospect</button>
@@ -319,6 +330,7 @@ async function openDetail(id) {
   view.querySelector('#btn-delete-visita').onclick = deleteVisita;
 
   // Radio groups
+  setupRadio('rg-emp-status', e.status || '');
   setupRadio('rg-status', v.status, (val) => {
     document.getElementById('agenda-block').classList.toggle('hidden', val !== 'voltar');
   });
@@ -443,6 +455,17 @@ async function saveVisita() {
     audio_blob: recAudioBlob,
   };
   await db.putVisita(v);
+
+  // Atualiza status da empresa se mudou
+  const newEmpStatus = getRadioVal('rg-emp-status');
+  const empCur = await db.getEmpresa(id);
+  if (empCur && empCur.status !== newEmpStatus) {
+    empCur.status = newEmpStatus;
+    await db.putEmpresa(empCur);
+    const idx = empresas.findIndex(x => x.id === id);
+    if (idx >= 0) empresas[idx] = empCur;
+  }
+
   showToast('Salvo');
   updateCounter();
   closeDetail();
@@ -1184,40 +1207,80 @@ function closePoolModal() {
 
 function renderPool(q) {
   const ql = q.toLowerCase().trim();
-  // Exclui o que já está na base local (empresas já adicionadas)
-  const baseNames = new Set(empresas.map(e =>
-    e.empresa.toLowerCase().replace(/[^a-z0-9]/g, '')));
-  const filtered = poolList.filter(p => {
-    const norm = p.empresa.toLowerCase().replace(/[^a-z0-9]/g, '');
-    if (baseNames.has(norm)) return false;
+  const norm = s => (s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]/g, '');
+  // Pool extras (30 do CSV) + empresas existentes da base SEM marcação de prioridade
+  // (status === 'sim' já aparece na lista principal — não precisa adicionar)
+  const itens = [];
+  // 1) Pool extras: empresas que NÃO estão no IDB
+  const baseNames = new Set(empresas.map(e => norm(e.empresa)));
+  for (const p of poolList) {
+    if (baseNames.has(norm(p.empresa))) continue;
+    itens.push({
+      source: 'pool',
+      empresa: p.empresa, rua: p.rua, stand: p.stand,
+      tag: p.secao || 'Pool extra',
+      status: '',
+    });
+  }
+  // 2) Empresas existentes da base (todas exceto as marcadas como "sim")
+  //    Inclui: nao, intern, provavel, vazio. Usuário pode escolher e reclassificar.
+  for (const e of empresas) {
+    if (e.status === 'sim') continue;
+    itens.push({
+      source: 'existing',
+      id: e.id,
+      empresa: e.empresa, rua: e.rua, stand: e.stand,
+      tag: e.status ? labelStatus(e.status) : 'sem status',
+      status: e.status || '',
+    });
+  }
+  // Filtra por busca
+  const filtered = itens.filter(p => {
     if (!ql) return true;
-    const hay = (p.empresa + ' ' + p.rua + p.stand + ' ' + (p.secao||'')).toLowerCase();
+    const hay = (p.empresa + ' ' + p.rua + p.stand + ' ' + p.tag).toLowerCase();
     return hay.includes(ql);
   });
+  // Ordena alfabético
+  filtered.sort((a, b) => a.empresa.localeCompare(b.empresa, 'pt-BR'));
+
   const list = document.getElementById('pool-list');
   if (filtered.length === 0) {
-    list.innerHTML = '<div class="muted" style="padding:16px; text-align:center">Sem resultados no pool.<br>Use "Criar manualmente" abaixo.</div>';
+    list.innerHTML = '<div class="muted" style="padding:16px; text-align:center">Nenhuma empresa encontrada.<br>Use "Criar manualmente" abaixo.</div>';
     return;
   }
   list.innerHTML = filtered.map(p => `
-    <div class="pool-item" data-empresa="${escapeHtml(p.empresa)}"
+    <div class="pool-item" data-source="${p.source}"
+         data-id="${p.id||''}"
+         data-empresa="${escapeHtml(p.empresa)}"
          data-rua="${escapeHtml(p.rua)}" data-stand="${escapeHtml(p.stand)}">
       <div class="stand-mini ${p.stand ? '' : 'no-stand'}">
         ${p.stand ? `${p.rua}-${p.stand}` : 'sem stand'}
       </div>
       <div style="flex:1; min-width:0">
         <div class="nome">${escapeHtml(p.empresa)}</div>
-        <div class="secao">${escapeHtml(p.secao || '')}</div>
+        <div class="secao">
+          ${p.status ? `<span class="status-pill ${p.status}" style="font-size:10px">${labelStatus(p.status)}</span> ` : ''}
+          ${escapeHtml(p.tag)}
+        </div>
       </div>
-      <div style="color: var(--accent); font-size: 22px; font-weight: 600">+</div>
+      <div style="color: var(--accent); font-size: 22px; font-weight: 600">›</div>
     </div>
   `).join('');
   list.querySelectorAll('.pool-item').forEach(el => {
-    el.onclick = () => addFromPool({
-      empresa: el.dataset.empresa,
-      rua: el.dataset.rua,
-      stand: el.dataset.stand,
-    });
+    el.onclick = () => {
+      if (el.dataset.source === 'existing') {
+        // Empresa já existe — abre detalhe direto
+        closePoolModal();
+        openDetail(parseInt(el.dataset.id));
+      } else {
+        // Pool: cria empresa custom
+        addFromPool({
+          empresa: el.dataset.empresa,
+          rua: el.dataset.rua,
+          stand: el.dataset.stand,
+        });
+      }
+    };
   });
 }
 
