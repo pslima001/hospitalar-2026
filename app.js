@@ -25,23 +25,68 @@ const CUSTOM_ID_BASE = 100000;
 const SHEETS_CSV_URL = 'https://docs.google.com/spreadsheets/d/1RPA_YAnZnoYW1ZkOphoXDm74s1enP0Qvnm_h23tIYCI/export?format=csv&gid=1770656616';
 
 // ------- BOOTSTRAP -------
+const DATA_VERSION = '2'; // bump quando data.json tem mudança estrutural
+
+function normEmp(s) {
+  return (s||'').toLowerCase().normalize('NFD')
+    .replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9]/g,'');
+}
+
 async function bootstrap() {
   const count = await db.getEmpresasCount();
+  const localVersion = localStorage.getItem('dataVersion');
   if (count === 0) {
-    // Primeiro load: baixa data.json e popula
     showToast('Carregando base de empresas…');
-    const res = await fetch('data.json');
+    const res = await fetch('data.json', { cache: 'no-store' });
     const list = await res.json();
     await db.bulkEmpresas(list);
+    localStorage.setItem('dataVersion', DATA_VERSION);
+  } else if (localVersion !== DATA_VERSION) {
+    // Migração não-destrutiva: importa empresas faltantes, atualiza campos básicos
+    showToast('Atualizando base oficial…');
+    try {
+      const res = await fetch('data.json', { cache: 'no-store' });
+      const list = await res.json();
+      const current = await db.getEmpresas();
+      const byNorm = {};
+      for (const c of current) byNorm[normEmp(c.empresa)] = c;
+      const toSave = [];
+      const usedIds = new Set(current.map(c => c.id));
+      let nextId = Math.max(0, ...current.filter(c => c.id < CUSTOM_ID_BASE).map(c => c.id)) + 1;
+      for (const item of list) {
+        const ex = byNorm[normEmp(item.empresa)];
+        if (ex) {
+          // Atualiza campos da empresa existente (preserva status do user e prospects editados)
+          const updated = {
+            ...ex,
+            type: item.type || ex.type || '',
+            // Se a empresa não tem rua/stand local, usa da API
+            rua: ex.rua || item.rua,
+            stand: ex.stand || item.stand,
+          };
+          if (JSON.stringify(updated) !== JSON.stringify(ex)) toSave.push(updated);
+        } else {
+          // Empresa nova
+          while (usedIds.has(nextId)) nextId++;
+          toSave.push({ ...item, id: nextId });
+          usedIds.add(nextId);
+          nextId++;
+        }
+      }
+      if (toSave.length) await db.bulkEmpresas(toSave);
+      localStorage.setItem('dataVersion', DATA_VERSION);
+      showToast(`Base atualizada: ${toSave.length} mudanças`);
+    } catch (e) {
+      console.warn('Migração falhou:', e);
+    }
   }
   empresas = await db.getEmpresas();
   empresas.sort((a, b) => a.empresa.localeCompare(b.empresa, 'pt-BR'));
-  // Carrega pool de expositores extras (não-visitados mas disponíveis)
+  // Pool ainda existe para compat — agora vazio (todas as empresas estão na base oficial)
   try {
     const pr = await fetch('pool.json');
     poolList = await pr.json();
   } catch (e) {
-    console.warn('Pool não carregou', e);
     poolList = [];
   }
   populateRuas();
