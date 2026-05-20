@@ -275,15 +275,6 @@ async function openDetail(id) {
       </section>
 
       <section class="card">
-        <h3 style="margin-top:0">Site</h3>
-        <input type="text" id="f-site" placeholder="https://…" value="${escapeHtml(v.site||'')}">
-        <div class="row" style="margin-top:6px">
-          <button class="btn small" id="btn-google">Buscar no Google</button>
-          ${v.site ? `<a class="btn small" href="${escapeHtml(v.site)}" target="_blank" style="text-align:center">Abrir site</a>` : ''}
-        </div>
-      </section>
-
-      <section class="card">
         <h3 style="margin-top:0">Status da visita</h3>
         <div class="radio-group" id="rg-status">
           <label data-val="feita"><span>Feita</span></label>
@@ -348,9 +339,9 @@ async function openDetail(id) {
       <section class="card">
         <h3 style="margin-top:0">Foto do cartão recebido</h3>
         <div class="card-foto-cartao">
-          <label class="placeholder" id="cartao-placeholder">
+          <input type="file" id="f-cartao" accept="image/*" capture="environment" style="display:none">
+          <label for="f-cartao" class="placeholder" id="cartao-placeholder">
             <span>📷 Tirar / escolher foto</span>
-            <input type="file" id="f-cartao" accept="image/*" capture="environment" style="display:none">
           </label>
           <div id="cartao-preview" style="display:none">
             <img id="cartao-img">
@@ -368,9 +359,6 @@ async function openDetail(id) {
 
   // Eventos
   view.querySelector('.back').onclick = closeDetail;
-  view.querySelector('#btn-google').onclick = () => {
-    window.open(`https://www.google.com/search?q=${encodeURIComponent(e.empresa + ' hospitalar 2026')}`, '_blank');
-  };
   view.querySelector('#btn-save').onclick = saveVisita;
   view.querySelector('#btn-delete-visita').onclick = deleteVisita;
 
@@ -381,12 +369,8 @@ async function openDetail(id) {
   });
   setupRadio('rg-interesse', v.interesse);
 
-  // Foto cartão
+  // Foto cartão — label[for="f-cartao"] abre o file picker nativamente
   if (v.cartao_blob) renderCartao(v.cartao_blob);
-  view.querySelector('#cartao-placeholder').onclick = (ev) => {
-    ev.preventDefault();
-    view.querySelector('#f-cartao').click();
-  };
   view.querySelector('#f-cartao').onchange = (ev) => {
     const file = ev.target.files[0]; if (!file) return;
     renderCartao(file);
@@ -494,7 +478,6 @@ async function saveVisita() {
     proximos: proximos,
     proximos_outros: document.getElementById('f-proximos-outros').value,
     notas: document.getElementById('f-notas').value,
-    site: document.getElementById('f-site').value.trim(),
     transcricao: document.getElementById('f-transcricao').value,
     cartao_blob: pendingCartao,
     audio_blob: recAudioBlob,
